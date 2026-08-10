@@ -54,16 +54,66 @@ export const directory: DirectorySection[] = [
     icon: "documents",
     accent: "green",
     links: [
-      { title: "Таблиця оренди", description: "зведена адреси, вартості, термін дії", url: "#", tag: "Google Drive" },
-      { title: "Документи майстрів", description: "документи та договори оренди з майстрами", url: "#", tag: "Google Drive" },
-      { title: "ФОП Мокляк А.Ю.", description: "установчі по ФОП", url: "#", tag: "Google Drive" },
-      { title: "Затоплення А2", description: "", url: "#", tag: "Google Drive" },
-      { title: "гугл форми", description: "для майстрів та клієнтів", url: "#", tag: "Google Forms" },
-      { title: "інвентаризація", description: "остання 2026", url: "#", tag: "Google Sheets" },
-      { title: "паролі", description: "остання 2026", url: "#", tag: "Secure" },
-      { title: "старший перукар", description: "", url: "#", tag: "Google Drive" },
-      { title: "перевірка лайк", description: "камери та чек лист", url: "#", tag: "Checklist" },
-      { title: "Шаблони документів", description: "для друку", url: "#", tag: "Google Docs" },
+      { 
+        title: "Таблиця оренди", 
+        description: "зведена адреси, вартості, термін дії", 
+        url: "https://drive.google.com/drive/folders/1jUgVc2NvwF_rE4glyFjlo-jZEB1RAfD5?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "Документи майстрів", 
+        description: "документи та договори оренди з майстрами", 
+        url: "https://drive.google.com/drive/folders/1myvZDZIz0FT6ufRDV00HGUF9f_UNlEI5?usp=sharing", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "ФОП Мокляк А.Ю.", 
+        description: "установчі по ФОП", 
+        url: "https://drive.google.com/drive/folders/1UQS73cLGyuigKAY6Q2Z2Ig6PQ1tKHJKA?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "Затоплення А2", 
+        description: "", 
+        url: "https://drive.google.com/drive/folders/1vmvfnRsDvQz-T0YaQTgMbymgTpdSknsJ?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "гугл форми", 
+        description: "для майстрів та клієнтів", 
+        url: "https://drive.google.com/drive/folders/1fcQDBz06bBGBdGnao6vLrel8BKAKv4ch?usp=drive_link", 
+        tag: "Google Forms" 
+      },
+      { 
+        title: "інвентаризація", 
+        description: "остання 2026", 
+        url: "https://drive.google.com/drive/folders/1xt4Qa7fkLbarXcI_KD4kwpIxorb0V4d1?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "паролі", 
+        description: "остання 2026", 
+        url: "https://drive.google.com/drive/folders/1jNNUatyG4Rbmdozju-I6iNxGJEhreK6z?usp=drive_link", 
+        tag: "Secure" 
+      },
+      { 
+        title: "старший перукар", 
+        description: "", 
+        url: "https://drive.google.com/drive/folders/1ZMPCElRbuIhnWNsGwUjsSnfaTJAvTav2?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "перевірка лайк", 
+        description: "камери та чек лист", 
+        url: "https://drive.google.com/drive/folders/1SAJCg0lWdpWcMN50XJRtVl91CMkutKuT?usp=drive_link", 
+        tag: "Checklist" 
+      },
+      { 
+        title: "Шаблони документів", 
+        description: "для друку", 
+        url: "https://drive.google.com/drive/folders/1UXuf91q9s56q7AIRXhG-R7wosRYWEFk0?usp=drive_link", 
+        tag: "Google Docs" 
+      },
     ],
   },
   {
@@ -146,7 +196,7 @@ export const directory: DirectorySection[] = [
   {
     id: "process",
     title: "БП лайк",
-  10: "Бізнес-процеси та регламенти роботи.",
+    description: "Бізнес-процеси та регламенти роботи.",
     icon: "process",
     accent: "lime",
     links: [
