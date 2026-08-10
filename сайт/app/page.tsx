@@ -2,6 +2,7 @@ import { Scissors, FileText, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { BubblesBackground } from "@/components/bubbles-background"
 import { SiteHeader } from "@/components/site-header"
+import { DirectoryHub } from "@/components/directory-hub"
 
 export default function Page() {
   const documentsList = [
@@ -40,11 +41,9 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Головний контент / Сітка розділів */}
-        <div id="rozdily" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-10 sm:py-12">
+        {/* Спеціальна картка «Документи» з твоїми пунктами та посиланням на сторінку */}
+        <div className="mx-auto max-w-6xl px-5 pt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            {/* Картка «Документи» із посиланням на /documents */}
             <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 border border-emerald-100 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -61,7 +60,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                {/* Список внутрішніх елементів у рамці */}
+                {/* Список всередині картки */}
                 <div className="space-y-2 mt-4 max-h-64 overflow-y-auto pr-1">
                   {documentsList.map((item, idx) => (
                     <a 
@@ -81,10 +80,12 @@ export default function Page() {
                 </div>
               </div>
             </div>
-
-            {/* Тут пізніше додамо інші розділи (Аналітика, Звіти тощо) */}
-
           </div>
+        </div>
+
+        {/* Усі інші розділи сайту */}
+        <div id="rozdily" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-6 sm:py-8">
+          <DirectoryHub />
         </div>
 
         <footer id="dovidka" className="scroll-mt-20 border-t border-border/60">
