@@ -54,9 +54,16 @@ export const directory: DirectorySection[] = [
     icon: "documents",
     accent: "green",
     links: [
-      { title: "Папка «Документи»", description: "Загальна папка з усіма файлами", url: "#", tag: "Google Drive" },
-      { title: "Шаблони договорів", description: "Трудові та інші договори", url: "#", tag: "Google Docs" },
-      { title: "Бланки та форми", description: "Готові бланки для друку", url: "#", tag: "Google Drive" },
+      { title: "Таблиця оренди", description: "зведена адреси, вартості, термін дії", url: "#", tag: "Google Drive" },
+      { title: "Документи майстрів", description: "документи та договори оренди з майстрами", url: "#", tag: "Google Drive" },
+      { title: "ФОП Мокляк А.Ю.", description: "установчі по ФОП", url: "#", tag: "Google Drive" },
+      { title: "Затоплення А2", description: "", url: "#", tag: "Google Drive" },
+      { title: "гугл форми", description: "для майстрів та клієнтів", url: "#", tag: "Google Forms" },
+      { title: "інвентаризація", description: "остання 2026", url: "#", tag: "Google Sheets" },
+      { title: "паролі", description: "остання 2026", url: "#", tag: "Secure" },
+      { title: "старший перукар", description: "", url: "#", tag: "Google Drive" },
+      { title: "перевірка лайк", description: "камери та чек лист", url: "#", tag: "Checklist" },
+      { title: "Шаблони документів", description: "для друку", url: "#", tag: "Google Docs" },
     ],
   },
   {
@@ -139,7 +146,7 @@ export const directory: DirectorySection[] = [
   {
     id: "process",
     title: "БП лайк",
-    description: "Бізнес-процеси та регламенти роботи.",
+  10: "Бізнес-процеси та регламенти роботи.",
     icon: "process",
     accent: "lime",
     links: [
