@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import {
   FileText,
   BarChart3,
@@ -163,12 +164,23 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
           <Icon className="size-6" />
         </span>
         <div className="min-w-0 flex-1">
-          <h2
-            id={`section-${section.id}`}
-            className="text-pretty font-display text-lg font-semibold leading-tight text-foreground"
-          >
-            {section.title}
-          </h2>
+          {section.id === "documents" ? (
+            <Link
+              href="/documents"
+              onClick={(e) => e.stopPropagation()}
+              className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
+            >
+              {section.title}
+              <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover/title:opacity-100" />
+            </Link>
+          ) : (
+            <h2
+              id={`section-${section.id}`}
+              className="text-pretty font-display text-lg font-semibold leading-tight text-foreground"
+            >
+              {section.title}
+            </h2>
+          )}
           <p className="mt-1 text-pretty text-sm leading-relaxed text-muted-foreground">{section.description}</p>
         </div>
         <span className="flex shrink-0 items-center gap-1.5">
