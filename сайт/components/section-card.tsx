@@ -36,15 +36,10 @@ const iconMap: Record<DirectorySection["icon"], LucideIcon> = {
 }
 
 type AccentStyle = {
-  /** мʼякий фон плитки іконки */
   tile: string
-  /** колір самої іконки/акценту */
   fg: string
-  /** мітка */
   badge: string
-  /** верхня смужка-акцент */
   bar: string
-  /** підсвітка рамки при наведенні */
   hover: string
 }
 
@@ -150,12 +145,19 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
     >
       <span className={cn("h-1.5 w-full", accent.bar)} aria-hidden="true" />
 
-      <button
-        type="button"
+      {/* Замінили <button> на валідний <div>, а розгортання тепер на клік по цій зоні */}
+      <div
         onClick={() => setOpen((v) => !v)}
+        role="button"
+        tabIndex={0}
         aria-expanded={isOpen}
         aria-controls={`links-${section.id}`}
-        className="flex items-start gap-4 p-5 text-left transition-transform duration-100 active:scale-[0.98]"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setOpen((v) => !v)
+          }
+        }}
+        className="flex cursor-pointer items-start gap-4 p-5 text-left transition-transform duration-100 active:scale-[0.98]"
       >
         <span
           className={cn("flex size-12 shrink-0 items-center justify-center rounded-2xl", accent.tile, accent.fg)}
@@ -195,7 +197,7 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
             aria-hidden="true"
           />
         </span>
-      </button>
+      </div>
 
       {isOpen ? (
         <div id={`links-${section.id}`} className="flex flex-col gap-0.5 px-4 pb-4">
