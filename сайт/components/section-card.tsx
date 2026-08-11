@@ -2,105 +2,87 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowUpRight, ChevronDown } from "lucide-react"
-import { DirectorySection } from "@/lib/directory-data"
-import { cn } from "@/lib/utils"
+import { ArrowUpRight, ChevronDown, ExternalLink } from "lucide-react"
+import type { directory } from "@/lib/directory-data"
 
-export function SectionCard({
-  section,
-  forceOpen,
-}: {
-  section: DirectorySection
+interface SectionCardProps {
+  section: (typeof directory)[number]
   forceOpen?: boolean
-}) {
-  const [isOpen, setIsOpen] = useState(false)
+}
 
-  const expanded = forceOpen || isOpen
-  const hasDedicatedPage = section.id === "documents" || section.id === "analytics"
+export function SectionCard({ section, forceOpen }: SectionCardProps) {
+  const [isOpen, setIsOpen] = useState(true)
 
-  // Якщо у розділа є окрема сторінка, вся верхня частина стає посиланням-контейнером
-  const CardWrapper = hasDedicatedPage ? Link : "div"
-  const wrapperProps = hasDedicatedPage ? { href: `/${section.id}` } : {}
+  const isSpecialSection = ["documents", "analytics", "structure", "pos"].includes(section.id)
+  const expanded = forceOpen ?? isOpen
 
   return (
-    <div
-      onClick={() => {
-        if (!hasDedicatedPage) {
-          setIsOpen((prev) => !prev)
-        }
-      }}
-      className={cn(
-        "group relative flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-ring/50 hover:shadow-md",
-        !hasDedicatedPage && "cursor-pointer",
-        expanded && "border-ring/60 shadow-md",
-      )}
-    >
-      {/* Клікабельний контейнер для сторінок або звичайний блок */}
-      <CardWrapper
-        {...wrapperProps}
-        className={cn(
-          "flex items-start justify-between gap-4 block w-full text-left",
-          hasDedicatedPage && "cursor-pointer"
-        )}
-      >
-        <div className="flex items-start gap-4 min-w-0 flex-1">
-          {/* Іконка або бейдж розділу (якщо є у вашому дизайні) */}
-          <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2">
-              <h2 className="text-pretty font-display text-lg font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+    <div className="group relative flex flex-col rounded-3xl border border-border/70 bg-card p-6 shadow-sm transition-all duration-200 hover:border-border hover:shadow-md">
+      {/* Шапка картки */}
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          {isSpecialSection ? (
+            <div className="relative z-10">
+              <Link
+                href={`/${section.id}`}
+                className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
                 {section.title}
-              </h2>
-              {hasDedicatedPage && (
-                <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover:opacity-100 text-primary" />
-              )}
+                <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover/title:opacity-100" />
+              </Link>
             </div>
-            <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
-              {section.description}
-            </p>
-          </div>
+          ) : (
+            <h2 className="font-display text-lg font-semibold leading-tight text-foreground">
+              {section.title}
+            </h2>
+          )}
+          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+            {section.description}
+          </p>
         </div>
 
-        {/* Стрілочка розгортання лише для звичайних карток із підменю */}
-        {!hasDedicatedPage && section.links.length > 0 && (
-          <div
-            className={cn(
-              "flex size-9 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-secondary/50 text-muted-foreground transition-transform duration-200",
-              expanded && "rotate-180 bg-secondary text-foreground",
-            )}
+        {!forceOpen && (
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex size-8 shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-transform hover:bg-secondary/80"
+            aria-label="Згорнути/розгорнути розділ"
           >
-            <ChevronDown className="size-4" />
-          </div>
+            <ChevronDown className={`size-4 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} />
+          </button>
         )}
-      </CardWrapper>
+      </div>
 
-      {/* Випадаючий список для звичайних карток (якщо є посилання і картка розгорнута) */}
-      {expanded && !hasDedicatedPage && section.links.length > 0 && (
-        <div className="mt-6 border-t border-border/60 pt-4 space-y-3">
-          {section.links.map((link, idx) => (
+      {/* Список посилань у картці */}
+      {expanded && (
+        <div className="mt-5 flex flex-col gap-2.5 border-t border-border/55 pt-4">
+          {section.links.map((link) => (
             <a
-              key={idx}
+              key={link.url}
               href={link.url}
               target="_blank"
-              rel="noreferrer"
-              className="group/link flex items-start justify-between gap-3 rounded-xl p-2.5 transition-colors hover:bg-secondary/70"
+              rel="noopener noreferrer"
+              className="group/link flex items-center justify-between gap-3 rounded-xl p-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="font-medium text-sm text-foreground group-hover/link:text-primary transition-colors">
+                  <span className="font-medium text-foreground group-hover/link:text-primary transition-colors truncate">
                     {link.title}
                   </span>
+                  {link.tag && (
+                    <span className="shrink-0 rounded-md bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
+                      {link.tag}
+                    </span>
+                  )}
                 </div>
                 {link.description && (
-                  <p className="mt-0.5 text-xs text-muted-foreground line-clamp-1">
+                  <p className="mt-0.5 text-xs text-muted-foreground truncate">
                     {link.description}
                   </p>
                 )}
               </div>
-              {link.tag && (
-                <span className="shrink-0 rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
-                  {link.tag}
-                </span>
-              )}
+              <ExternalLink className="size-4 shrink-0 text-muted-foreground opacity-40 transition-opacity group-hover/link:opacity-100" />
             </a>
           ))}
         </div>
