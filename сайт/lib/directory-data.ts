@@ -1,258 +1,462 @@
+import {
+  Calendar,
+  MapPin,
+  TrendingUp,
+  Gauge,
+  LineChart,
+  Scissors,
+  Stamp,
+  Share2,
+  Tag,
+  Heart,
+  Volume2,
+  Shirt,
+  Percent,
+  Image as ImageIcon,
+  QrCode,
+  IdCard,
+  MessageCircle,
+  Award,
+  FileText,
+  FolderOpen,
+  Palette,
+  Trello,
+  StickyNote,
+  Users,
+  Instagram,
+  Facebook,
+  Globe,
+  MessagesSquare,
+  Music2,
+  HardDrive,
+  Figma,
+  type LucideIcon,
+} from "lucide-react";
+
 /**
- * ┌─────────────────────────────────────────────────────────────────────┐
- * │  ЯК РЕДАГУВАТИ ЦЕЙ ФАЙЛ                                                │
- * │                                                                       │
- * │  Це єдине місце, де зберігаються всі розділи та посилання довідника.  │
- * │  Щоб додати посилання — знайдіть потрібний розділ (section) і         │
- * │  замініть url: "#" на своє посилання (або додайте новий обʼєкт):      │
- * │                                                                       │
- * │    {                                                                  │
- * │      title: "Назва посилання",                                        │
- * │      description: "Короткий опис (необовʼязково)",                    │
- * │      url: "https://...",   // вставте своє посилання                  │
- * │      tag: "Google Drive",  // необовʼязкова мітка                     │
- * │    }                                                                  │
- * │                                                                       │
- * │  Щоб прибрати посилання — просто видаліть відповідний обʼєкт.         │
- * └─────────────────────────────────────────────────────────────────────┘
+ * A single clickable entry rendered by <SectionCard />.
+ *
+ * `icon`  – a lucide-react icon component (used by default).
+ * `logo`  – path to a brand logo under /public (e.g. "/logos/canva.svg").
+ *           If present, it's rendered instead of `icon` — use this for
+ *           brands lucide doesn't ship (Canva, TikTok, Threads, Notion, Miro…).
+ *           Drop square PNG/SVG logos (min 64x64) into /public/logos/.
+ * `image` – optional wide preview image for the card body
+ *           (e.g. a screenshot of the dashboard / template).
  */
-
-export type DirectoryLink = {
-  title: string
-  description?: string
-  url: string
-  tag?: string
+export interface DirectoryLink {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+  logo?: string;
+  image?: string;
+  external?: boolean;
 }
 
-export type DirectorySection = {
-  id: string
-  title: string
-  description: string
-  /** Ключ іконки з lucide-react (див. components/section-card.tsx) */
-  icon:
-    | "documents"
-    | "analytics"
-    | "structure"
-    | "pos"
-    | "links"
-    | "reports"
-    | "payments"
-    | "database"
-    | "process"
-    | "booking"
-    | "repair"
-  /** Колірний акцент розділу */
-  accent: "green" | "purple" | "teal" | "amber" | "pink" | "blue" | "lime" | "violet"
-  links: DirectoryLink[]
+export interface DirectoryGroup {
+  id: string;
+  title: string;
+  links: DirectoryLink[];
 }
 
-export const directory: DirectorySection[] = [
+/* ------------------------------------------------------------------ */
+/*  1. Швидкий доступ / аналітика запису (з першого скріна Canva)      */
+/* ------------------------------------------------------------------ */
+
+export const quickAccessLinks: DirectoryLink[] = [
   {
-    id: "documents",
-    title: "Документи",
-    description: "Шаблони договорів, бланки та інші документи на Google Диску.",
-    icon: "documents",
-    accent: "green",
-    links: [
-      { 
-        title: "Таблиця оренди", 
-        description: "зведена адреси, вартості, термін дії", 
-        url: "https://drive.google.com/drive/folders/1jUgVc2NvwF_rE4glyFjlo-jZEB1RAfD5?usp=drive_link", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "Документи майстрів", 
-        description: "документи та договори оренди з майстрами", 
-        url: "https://drive.google.com/drive/folders/1myvZDZIz0FT6ufRDV00HGUF9f_UNlEI5?usp=sharing", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "ФОП Мокляк А.Ю.", 
-        description: "установчі по ФОП", 
-        url: "https://drive.google.com/drive/folders/1UQS73cLGyuigKAY6Q2Z2Ig6PQ1tKHJKA?usp=drive_link", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "Затоплення А2", 
-        description: "", 
-        url: "https://drive.google.com/drive/folders/1vmvfnRsDvQz-T0YaQTgMbymgTpdSknsJ?usp=drive_link", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "гугл форми", 
-        description: "для майстрів та клієнтів", 
-        url: "https://drive.google.com/drive/folders/1fcQDBz06bBGBdGnao6vLrel8BKAKv4ch?usp=drive_link", 
-        tag: "Google Forms" 
-      },
-      { 
-        title: "інвентаризація", 
-        description: "остання 2026", 
-        url: "https://drive.google.com/drive/folders/1xt4Qa7fkLbarXcI_KD4kwpIxorb0V4d1?usp=drive_link", 
-        tag: "Google Sheets" 
-      },
-      { 
-        title: "паролі", 
-        description: "остання 2026", 
-        url: "https://drive.google.com/drive/folders/1jNNUatyG4Rbmdozju-I6iNxGJEhreK6z?usp=drive_link", 
-        tag: "Secure" 
-      },
-      { 
-        title: "старший перукар", 
-        description: "", 
-        url: "https://drive.google.com/drive/folders/1ZMPCElRbuIhnWNsGwUjsSnfaTJAvTav2?usp=drive_link", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "перевірка лайк", 
-        description: "камери та чек лист", 
-        url: "https://drive.google.com/drive/folders/1SAJCg0lWdpWcMN50XJRtVl91CMkutKuT?usp=drive_link", 
-        tag: "Checklist" 
-      },
-      { 
-        title: "Шаблони документів", 
-        description: "для друку", 
-        url: "https://drive.google.com/drive/folders/1UXuf91q9s56q7AIRXhG-R7wosRYWEFk0?usp=drive_link", 
-        tag: "Google Docs" 
-      },
-    ],
-  },
- {
-    id: "analytics",
-    title: "Аналітика",
-    description: "Дашборди й показники ефективності мережі.",
-    icon: "analytics",
-    accent: "purple",
-    links: [
-      {
-        title: "Онлайн записи",
-        description: "Аналітика записів + дашборд",
-        url: "https://docs.google.com/spreadsheets/d/13UXuajgArxGT7viYGuACFO0T_tFIiaJykuHBmoGyrCM/edit?usp=drive_link",
-        tag: "Google Sheets",
-      },
-      {
-        title: "Карта перукарень",
-        description: "Перукарні м. Полтава",
-        url: "https://www.google.com/maps/d/edit?mid=1EX0hDXrliu1aSZ3Rly3P8tiIMVJzP64&usp=drive_link",
-        tag: "Google Maps",
-      },
-      {
-        title: "Аналіз 2025",
-        description: "Сер. к-ть чеків, бази клієнтів",
-        url: "https://drive.google.com/drive/folders/1kI-uvxV-WmaiFhix6vSog8X3p7sE94EN?usp=drive_link",
-        tag: "Google Drive",
-      },
-      {
-        title: "Швидкість майстра",
-        description: "Середня швидкість 2025",
-        url: "https://docs.google.com/spreadsheets/d/1PAWBNjmXqm1nhvFuiyFBLJcEjsTvyslB/edit?usp=drive_link&ouid=112373292964682302363&rtpof=true&sd=true",
-        tag: "Google Sheets",
-      },
-      {
-        title: "Аналіз ринку",
-        description: "Порівняння цін, конкуренти",
-        url: "https://drive.google.com/drive/folders/1dqTEH4v2Dm_eldk88LlEBhTl2Yuqqz6E?usp=drive_link",
-        tag: "Google Drive",
-      },
-    ],
+    id: "online-bookings",
+    title: "Онлайн записи",
+    description: "Аналітика записів + дашборд",
+    href: "/analytics",
+    icon: Calendar,
+    image: "/previews/analytics-dashboard.png",
   },
   {
-    id: "structure",
-    title: "Оргструктура та посадові",
-    description: "Схема організації, ролі та посадові інструкції.",
-    icon: "structure",
-    accent: "blue",
-    links: [
-      { title: "Оргструктура мережі", description: "Хто за що відповідає", url: "#", tag: "Схема" },
-      { title: "Посадові інструкції", description: "Обовʼязки за посадами", url: "#", tag: "Google Drive" },
-    ],
+    id: "barbershop-map",
+    title: "Карта перукарень",
+    description: "Перукарні м. Полтава",
+    href: "https://www.google.com/maps/d/edit?mid=REPLACE_ME",
+    icon: MapPin,
+    external: true,
   },
   {
-    id: "pos",
-    title: "POS матеріали",
-    description: "Рекламні та оформлювальні матеріали для точок.",
-    icon: "pos",
-    accent: "pink",
-    links: [
-      { title: "Папка POS-матеріалів", description: "Макети, банери, наклейки", url: "#", tag: "Google Drive" },
-      { title: "Брендбук", description: "Логотипи, кольори, шрифти", url: "#", tag: "Документ" },
-    ],
+    id: "analysis-2025",
+    title: "Аналіз 2025",
+    description: "Сер. к-ть чеків, бази клієнтів",
+    href: "/analytics#2025",
+    icon: LineChart,
   },
   {
-    id: "links",
-    title: "Посилання",
-    description: "Корисні сервіси та швидкі посилання для роботи.",
-    icon: "links",
-    accent: "teal",
-    links: [
-      { title: "Загальний Google Диск", description: "Головна папка мережі", url: "#", tag: "Google Drive" },
-      { title: "Корисні сервіси", description: "Інструменти, якими користуємось", url: "#", tag: "Список" },
-    ],
+    id: "master-speed",
+    title: "Швидкість майстра",
+    description: "Середня швидкість 2025",
+    href: "/analytics#speed",
+    icon: Gauge,
   },
   {
-    id: "reports",
-    title: "Звіти",
-    description: "Форми та шаблони щоденної й місячної звітності.",
-    icon: "reports",
-    accent: "amber",
-    links: [
-      { title: "Щоденні звіти", description: "Форма для адміністраторів", url: "#", tag: "Google Sheets" },
-      { title: "Місячні звіти", description: "Підсумки по точках", url: "#", tag: "Google Sheets" },
-    ],
+    id: "market-analysis",
+    title: "Аналіз ринку",
+    description: "Порівняння цін, конкуренти",
+    href: "/market",
+    icon: TrendingUp,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  2. Матеріали та посилання (верхній ряд другого скріна)             */
+/* ------------------------------------------------------------------ */
+
+export const materialsLinks: DirectoryLink[] = [
+  {
+    id: "first-haircut",
+    title: "Перша стрижка",
+    description: "Анкета / сценарій для першого візиту клієнта",
+    href: "https://docs.google.com/document/d/REPLACE_ME",
+    icon: Scissors,
+    external: true,
   },
   {
-    id: "payments",
-    title: "Платіжний календар",
-    description: "Графік платежів, оренди та регулярних витрат.",
-    icon: "payments",
-    accent: "violet",
-    links: [
-      { title: "Платіжний календар", description: "Усі платежі за датами", url: "#", tag: "Google Sheets" },
-      { title: "Оренда та комуналка", description: "Регулярні платежі по точках", url: "#", tag: "Google Sheets" },
-    ],
+    id: "stencil",
+    title: "Трафарет",
+    description: "Трафарети для оформлення вітрин і стендів",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: Stamp,
+    external: true,
   },
   {
-    id: "database",
-    title: "Бази даних",
-    description: "Клієнтські та робочі бази мережі.",
-    icon: "database",
-    accent: "green",
-    links: [
-      { title: "База клієнтів", description: "Загальна клієнтська база", url: "#", tag: "База" },
-      { title: "База постачальників", description: "Контакти та умови", url: "#", tag: "Google Sheets" },
-    ],
+    id: "social-icons",
+    title: "Іконки соц. мереж",
+    description: "Набір іконок для сторіз і публікацій",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: Share2,
+    external: true,
   },
   {
-    id: "process",
-    title: "БП лайк",
-    description: "Бізнес-процеси та регламенти роботи.",
-    icon: "process",
-    accent: "lime",
-    links: [
-      { title: "Опис бізнес-процесів", description: "Як влаштована робота", url: "#", tag: "Документ" },
-      { title: "Регламенти", description: "Правила та стандарти", url: "#", tag: "Google Drive" },
-    ],
+    id: "price-list",
+    title: "Прайс",
+    description: "Актуальний прайс-лист мережі «Лайк»",
+    href: "https://drive.google.com/file/d/REPLACE_ME",
+    icon: Tag,
+    external: true,
   },
   {
-    id: "booking",
-    title: "Онлайн запис і лояльність",
-    description: "Система онлайн-запису та програма лояльності.",
-    icon: "booking",
-    accent: "purple",
-    links: [
-      { title: "Система онлайн-запису", description: "Кабінет адміністрування", url: "#", tag: "Сервіс" },
-      { title: "Програма лояльності", description: "Умови та налаштування", url: "#", tag: "Документ" },
-    ],
+    id: "loyalty-card",
+    title: "Карта лояльності",
+    description: "Умови програми лояльності для клієнтів",
+    href: "https://drive.google.com/file/d/REPLACE_ME",
+    icon: Heart,
+    external: true,
   },
   {
-    id: "repair",
-    title: "Ремонт та відкриття точки",
-    description: "Чек-листи ремонту, запуску та контакти підрядників.",
-    icon: "repair",
-    accent: "teal",
-    links: [
-      { title: "Чек-лист відкриття точки", description: "Кроки до запуску", url: "#", tag: "Чек-лист" },
-      { title: "Довідник з ремонту", description: "Що робити при поломках", url: "#", tag: "Документ" },
-      { title: "Контакти підрядників", description: "Сантехнік, електрик, майстри", url: "#", tag: "Контакти" },
-    ],
+    id: "audio-ads",
+    title: "Аудіо реклама",
+    description: "Аудіоролики для трансляції в залі",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: Volume2,
+    external: true,
   },
-]
+  {
+    id: "t-shirts",
+    title: "Футболки",
+    description: "Макети мерчу для майстрів",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: Shirt,
+    external: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  3. POS-матеріали — блок 1: Google Drive (друк / PDF-звіти)         */
+/* ------------------------------------------------------------------ */
+
+export const posDriveLinks: DirectoryLink[] = [
+  {
+    id: "pdf-reports",
+    title: "PDF-звіти",
+    description: "Щомісячні звіти по записах і виручці",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: FileText,
+    external: true,
+  },
+  {
+    id: "print-materials",
+    title: "Матеріали для друку",
+    description: "Готові до друку постери, цінники, вивіски",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: FolderOpen,
+    external: true,
+  },
+  {
+    id: "certificates-drive",
+    title: "Сертифікати",
+    description: "Бланки подарункових сертифікатів (PDF)",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: Award,
+    external: true,
+  },
+  {
+    id: "id-cards",
+    title: "Візитки",
+    description: "Друковані макети візиток майстрів",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: IdCard,
+    external: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  3. POS-матеріали — блок 2: Canva (редагуй і завантажуй)            */
+/* ------------------------------------------------------------------ */
+
+export const posCanvaLinks: DirectoryLink[] = [
+  {
+    id: "student-discount",
+    title: "Знижки день студента, для військових",
+    description: "Шаблон акційного посту / сторіз",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Percent,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "city-poster-a2",
+    title: "Плакат по місту А2",
+    description: "Афіша формату А2 для розклейки по місту",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: ImageIcon,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "promo-30-stories",
+    title: "Акція -30% (сторіз)",
+    description: "Шаблон сторіз для акції -30%",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Percent,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "promo-30-post",
+    title: "Акція -30% (пост)",
+    description: "Шаблон посту для стрічки Instagram",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Percent,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "cosmetics-price-tags",
+    title: "Цінники косметика",
+    description: "Шаблон цінників для вітрини з косметикою",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: QrCode,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "online-booking-canva",
+    title: "Онлайн запис",
+    description: "Банер-нагадування про онлайн-запис",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Calendar,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "business-cards-new",
+    title: "Візитки нові",
+    description: "Оновлений дизайн візиток майстрів",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: IdCard,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "social-icons-canva",
+    title: "Іконки соцмереж",
+    description: "Комплект брендованих іконок для актуальних сторіз",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Share2,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "back-in-10",
+    title: "Буду через 10 хв",
+    description: "Табличка на двері / стійку адміністратора",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: MessageCircle,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+  {
+    id: "certificates-canva",
+    title: "Сертифікати",
+    description: "Редагований шаблон подарункового сертифіката",
+    href: "https://www.canva.com/design/REPLACE_ME/edit",
+    icon: Award,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  4. Інструменти команди (третій скрін)                              */
+/* ------------------------------------------------------------------ */
+
+export const toolsLinks: DirectoryLink[] = [
+  {
+    id: "trello",
+    title: "Трелло",
+    description: "Дошки завдань команди",
+    href: "https://trello.com/REPLACE_ME",
+    icon: Trello,
+    external: true,
+  },
+  {
+    id: "notion",
+    title: "Ноушин",
+    description: "База знань і нотатки",
+    href: "https://notion.so/REPLACE_ME",
+    icon: StickyNote,
+    logo: "/logos/notion.svg",
+    external: true,
+  },
+  {
+    id: "owners",
+    title: "Власники",
+    description: "Внутрішній контакт-лист власників мережі",
+    href: "https://drive.google.com/file/d/REPLACE_ME",
+    icon: Users,
+    external: true,
+  },
+  {
+    id: "instagram",
+    title: "Інстаграм",
+    description: "Офіційний акаунт «Лайк»",
+    href: "https://instagram.com/REPLACE_ME",
+    icon: Instagram,
+    external: true,
+  },
+  {
+    id: "miro",
+    title: "Miro",
+    description: "Дошка для планування та мапінгу процесів",
+    href: "https://miro.com/app/board/REPLACE_ME",
+    icon: Palette,
+    logo: "/logos/miro.svg",
+    external: true,
+  },
+  {
+    id: "facebook",
+    title: "Фейсбук",
+    description: "Сторінка мережі у Facebook",
+    href: "https://facebook.com/REPLACE_ME",
+    icon: Facebook,
+    external: true,
+  },
+  {
+    id: "threads",
+    title: "Тредс",
+    description: "Офіційний акаунт у Threads",
+    href: "https://threads.net/REPLACE_ME",
+    icon: MessagesSquare,
+    logo: "/logos/threads.svg",
+    external: true,
+  },
+  {
+    id: "website",
+    title: "Сайт",
+    description: "Публічний сайт мережі «Лайк»",
+    href: "https://REPLACE_ME.com",
+    icon: Globe,
+    external: true,
+  },
+  {
+    id: "tiktok",
+    title: "TikTok",
+    description: "Офіційний акаунт у TikTok",
+    href: "https://tiktok.com/@REPLACE_ME",
+    icon: Music2,
+    logo: "/logos/tiktok.svg",
+    external: true,
+  },
+  {
+    id: "google-drive",
+    title: "Google Диск",
+    description: "Спільне сховище скрінів і звітів",
+    href: "https://drive.google.com/drive/folders/REPLACE_ME",
+    icon: HardDrive,
+    external: true,
+  },
+  {
+    id: "canva",
+    title: "Canva",
+    description: "Усі дизайни мережі «Лайк»",
+    href: "https://www.canva.com/REPLACE_ME",
+    icon: Figma,
+    logo: "/logos/canva.svg",
+    external: true,
+  },
+];
+
+export const directoryGroups: DirectoryGroup[] = [
+  { id: "quick-access", title: "Швидкий доступ", links: quickAccessLinks },
+  { id: "materials", title: "Матеріали та посилання", links: materialsLinks },
+  { id: "tools", title: "Інструменти команди", links: toolsLinks },
+];
+
+/* ------------------------------------------------------------------ */
+/*  5. Аналітика — мокові дані для дашборду (замініть на реальні API) */
+/* ------------------------------------------------------------------ */
+
+export interface MonthlyBookingPoint {
+  month: string;
+  created: number;
+  cancelled: number;
+}
+
+export const monthlyBookings: MonthlyBookingPoint[] = [
+  { month: "Січ", created: 410, cancelled: 38 },
+  { month: "Лют", created: 452, cancelled: 41 },
+  { month: "Бер", created: 498, cancelled: 35 },
+  { month: "Кві", created: 520, cancelled: 47 },
+  { month: "Тра", created: 561, cancelled: 52 },
+  { month: "Чер", created: 589, cancelled: 44 },
+  { month: "Лип", created: 610, cancelled: 39 },
+];
+
+export interface BookingTypeSlice {
+  name: string;
+  value: number;
+  color: string;
+}
+
+export const bookingsByType: BookingTypeSlice[] = [
+  { name: "Створено", value: 3805, color: "#8b7cf6" },
+  { name: "Скасовано", value: 823, color: "#4361ee" },
+];
+
+export interface MarketingChannel {
+  channel: string;
+  leads: number;
+  conversion: number; // %
+}
+
+export const marketingChannels: MarketingChannel[] = [
+  { channel: "Instagram", leads: 612, conversion: 34 },
+  { channel: "Google Maps", leads: 388, conversion: 41 },
+  { channel: "TikTok", leads: 205, conversion: 22 },
+  { channel: "Сарафанне радіо", leads: 470, conversion: 58 },
+  { channel: "Онлайн-запис (сайт)", leads: 341, conversion: 47 },
+];
+
+export const kpis = {
+  totalBookings: 4628,
+  cancelledBookings: 823,
+  successfulOnlineBookings: 3805,
+};
