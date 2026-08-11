@@ -164,9 +164,9 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
           <Icon className="size-6" />
         </span>
         <div className="min-w-0 flex-1">
-          {section.id === "documents" ? (
+          {section.id === "documents" || section.id === "analytics" ? (
             <Link
-              href="/documents"
+              href={`/${section.id === "documents" ? "documents" : "analytics"}`}
               onClick={(e) => e.stopPropagation()}
               className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
             >
@@ -208,6 +208,9 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
           )}
         </div>
       ) : null}
+    </section>
+  )
+}
     </section>
   )
 }
