@@ -16,30 +16,34 @@ export function SectionCard({
   const [isOpen, setIsOpen] = useState(false)
 
   const expanded = forceOpen || isOpen
+  const hasDedicatedPage = section.id === "documents" || section.id === "analytics"
 
   return (
     <div
-      onClick={() => setIsOpen((prev) => !prev)}
+      onClick={() => {
+        // Якщо це звичайна картка — розгортаємо/згортаємо при кліку
+        if (!hasDedicatedPage) {
+          setIsOpen((prev) => !prev)
+        }
+      }}
       className={cn(
-        "group relative flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 cursor-pointer hover:border-ring/50 hover:shadow-md",
+        "group relative flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-ring/50 hover:shadow-md",
+        !hasDedicatedPage && "cursor-pointer",
         expanded && "border-ring/60 shadow-md",
       )}
     >
       <div>
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
-            {section.id === "documents" || section.id === "analytics" ? (
-              <div className="relative z-[100]">
-                <Link
-                  href={`/${section.id}`}
-                  className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors cursor-pointer"
-                  style={{ pointerEvents: 'auto' }}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {section.title}
-                  <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover/title:opacity-100" />
-                </Link>
-              </div>
+            {hasDedicatedPage ? (
+              // Якщо є окрема сторінка (Документи, Аналітика) — робимо заголовок посиланням
+              <Link
+                href={`/${section.id}`}
+                className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
+              >
+                {section.title}
+                <ArrowUpRight className="size-4 opacity-70 transition-transform group-hover/title:translate-x-0.5 group-hover/title:-translate-y-0.5" />
+              </Link>
             ) : (
               <h2 className="text-pretty font-display text-lg font-semibold leading-tight text-foreground">
                 {section.title}
@@ -50,22 +54,29 @@ export function SectionCard({
             </p>
           </div>
 
-          <div
-            className={cn(
-              "flex size-9 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-secondary/50 text-muted-foreground transition-transform duration-200",
-              expanded && "rotate-180 bg-secondary text-foreground",
-            )}
-          >
-            <ChevronDown className="size-4" />
-          </div>
+          {/* Кнопка розгортання відображається лише для звичайних карток із посиланнями */}
+          {!hasDedicatedPage && section.links.length > 0 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsOpen((prev) => !prev)
+              }}
+              className={cn(
+                "flex size-9 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-secondary/50 text-muted-foreground transition-transform duration-200",
+                expanded && "rotate-180 bg-secondary text-foreground",
+              )}
+              aria-label="Розгорнути список"
+            >
+              <ChevronDown className="size-4" />
+            </button>
+          )}
         </div>
       </div>
 
-      {expanded && section.links.length > 0 && (
-        <div 
-          className="mt-6 border-t border-border/60 pt-4 space-y-3"
-          onClick={(e) => e.stopPropagation()}
-        >
+      {/* Список внутрішніх посилань (якщо картка розгорнута) */}
+      {expanded && !hasDedicatedPage && section.links.length > 0 && (
+        <div className="mt-6 border-t border-border/60 pt-4 space-y-3">
           {section.links.map((link, idx) => (
             <a
               key={idx}
