@@ -116,15 +116,43 @@ export const directory: DirectorySection[] = [
       },
     ],
   },
-  {
+ {
     id: "analytics",
     title: "Аналітика",
     description: "Дашборди й показники ефективності мережі.",
     icon: "analytics",
     accent: "purple",
     links: [
-      { title: "Загальний дашборд", description: "Ключові показники по мережі", url: "#", tag: "Дашборд" },
-      { title: "Аналітика по точках", description: "Порівняння перукарень", url: "#", tag: "Google Sheets" },
+      {
+        title: "Онлайн записи",
+        description: "Аналітика записів + дашборд",
+        url: "https://docs.google.com/spreadsheets/d/13UXuajgArxGT7viYGuACFO0T_tFIiaJykuHBmoGyrCM/edit?usp=drive_link",
+        tag: "Google Sheets",
+      },
+      {
+        title: "Карта перукарень",
+        description: "Перукарні м. Полтава",
+        url: "https://www.google.com/maps/d/edit?mid=1EX0hDXrliu1aSZ3Rly3P8tiIMVJzP64&usp=drive_link",
+        tag: "Google Maps",
+      },
+      {
+        title: "Аналіз 2025",
+        description: "Сер. к-ть чеків, бази клієнтів",
+        url: "https://drive.google.com/drive/folders/1kI-uvxV-WmaiFhix6vSog8X3p7sE94EN?usp=drive_link",
+        tag: "Google Drive",
+      },
+      {
+        title: "Швидкість майстра",
+        description: "Середня швидкість 2025",
+        url: "https://docs.google.com/spreadsheets/d/1PAWBNjmXqm1nhvFuiyFBLJcEjsTvyslB/edit?usp=drive_link&ouid=112373292964682302363&rtpof=true&sd=true",
+        tag: "Google Sheets",
+      },
+      {
+        title: "Аналіз ринку",
+        description: "Порівняння цін, конкуренти",
+        url: "https://drive.google.com/drive/folders/1dqTEH4v2Dm_eldk88LlEBhTl2Yuqqz6E?usp=drive_link",
+        tag: "Google Drive",
+      },
     ],
   },
   {
