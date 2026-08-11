@@ -58,6 +58,7 @@ export interface DirectoryLink {
 export interface DirectoryGroup {
   id: string;
   title: string;
+  description?: string;
   links: DirectoryLink[];
 }
 
@@ -305,7 +306,7 @@ export const posCanvaLinks: DirectoryLink[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  4. Інструменти команди (третій скрін)                              */
+/*  4. Інструменти команди (третій скрін)                             */
 /* ------------------------------------------------------------------ */
 
 export const toolsLinks: DirectoryLink[] = [
@@ -405,13 +406,18 @@ export const toolsLinks: DirectoryLink[] = [
 ];
 
 export const directoryGroups: DirectoryGroup[] = [
-  { id: "quick-access", title: "Швидкий доступ", links: quickAccessLinks },
-  { id: "materials", title: "Матеріали та посилання", links: materialsLinks },
-  { id: "tools", title: "Інструменти команди", links: toolsLinks },
+  { id: "quick-access", title: "Швидкий доступ", description: "Швидкий доступ до ключових метрик і звітів", links: quickAccessLinks },
+  { id: "materials", title: "Матеріали та посилання", description: "Операційні ресурси, прайси та анкети", links: materialsLinks },
+  { id: "pos", title: "POS-матеріали (Drive)", description: "Звіти та матеріали для друку", links: posDriveLinks },
+  { id: "pos-canva", title: "POS-матеріали (Canva)", description: "Шаблони для редагування в Canva", links: posCanvaLinks },
+  { id: "tools", title: "Інструменти команди", description: "Сервіси для управління та соцмережі", links: toolsLinks },
 ];
 
+// Додано експорт directory для сумісності з DirectoryHub
+export const directory = directoryGroups;
+
 /* ------------------------------------------------------------------ */
-/*  5. Аналітика — мокові дані для дашборду (замініть на реальні API) */
+/*  5. Аналітика — мокові дані для дашборду                           */
 /* ------------------------------------------------------------------ */
 
 export interface MonthlyBookingPoint {
