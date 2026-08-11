@@ -140,6 +140,9 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
   const Icon = iconMap[section.icon]
   const accent = accentMap[section.accent]
 
+  // Перевіряємо, чи для цього розділу потрібна окрема сторінка
+  const hasPage = ["documents", "analytics"].includes(section.id)
+
   return (
     <section
       className={cn(
@@ -164,9 +167,9 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
           <Icon className="size-6" />
         </span>
         <div className="min-w-0 flex-1">
-          {section.id === "documents" ? (
+          {hasPage ? (
             <Link
-              href="/documents"
+              href={`/${section.id}`}
               onClick={(e) => e.stopPropagation()}
               className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
             >
