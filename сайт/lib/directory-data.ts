@@ -155,7 +155,6 @@ export const directory: DirectorySection[] = [
       },
     ],
   },
-  // ... решта секцій залишаються без змін
   {
     id: "structure",
     title: "Оргструктура та посадові",
@@ -163,8 +162,10 @@ export const directory: DirectorySection[] = [
     icon: "structure",
     accent: "blue",
     links: [
-      { title: "Оргструктура мережі", description: "Хто за що відповідає", url: "#", tag: "Схема" },
-      { title: "Посадові інструкції", description: "Обовʼязки за посадами", url: "#", tag: "Google Drive" },
+      { title: "Посадова інструкція СЕО", description: "Обов'язки та зона відповідальності", url: "#", tag: "Документ" },
+      { title: "Посадова інструкція менеджера з розвитку", description: "Задачі та регламенти", url: "#", tag: "Документ" },
+      { title: "Посадова інструкція адміністратора", description: "Інструкції для роботи на точках", url: "#", tag: "Документ" },
+      { title: "Книга перукаря", description: "Стандарти роботи майстрів", url: "#", tag: "Документ" },
     ],
   },
   {
