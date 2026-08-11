@@ -11,7 +11,7 @@ export function SectionCard({
   section: DirectorySection
   forceOpen?: boolean
 }) {
-  // Перевіряємо, чи має розділ окрему сторінку
+  // Перевіряємо, чи має розділ окрему сторінку (і documents, і analytics)
   const hasDedicatedPage = section.id === "documents" || section.id === "analytics"
 
   return (
@@ -24,7 +24,7 @@ export function SectionCard({
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
             {hasDedicatedPage ? (
-              // Якщо це Документи або Аналітика — назва веде на їхню власну сторінку
+              // Якщо це Документи або Аналітика — назва веде на їхню власну сторінку через посилання
               <Link
                 href={`/${section.id}`}
                 className="group/title inline-flex items-center gap-1.5 font-display text-lg font-semibold leading-tight text-foreground hover:text-primary transition-colors"
