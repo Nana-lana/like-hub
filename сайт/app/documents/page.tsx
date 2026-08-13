@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, ArrowUpRight, FileText, Folder, ExternalLink } from "lucide-react"
+import { ArrowLeft, ArrowUpRight, FileText, Folder } from "lucide-react"
 import { directory } from "@/lib/directory-data"
 
 export default function DocumentsPage() {
@@ -9,7 +9,7 @@ export default function DocumentsPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden p-6 md:p-12">
-      {/* Абстракція на фон (м'які градієнтні плями та сітка) */}
+      {/* Абстракція на фон */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_oklch(0.93_0.05_158/0.4),_transparent_40%),radial-gradient(circle_at_80%_80%,_oklch(0.9_0.08_180/0.3),_transparent_40%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -41,30 +41,16 @@ export default function DocumentsPage() {
           </div>
         </div>
 
-        {/* Центральний блок із PNG папок та навколопотоковими елементами */}
-        <div className="relative flex flex-col items-center justify-center min-h-[500px] py-10">
+        {/* Центральний блок та навколишні папки */}
+        <div className="relative flex flex-col items-center justify-center min-h-[400px] py-6">
           
-          {/* Центральний елемент: PNG папок із документами */}
+          {/* Центральний декоративний елемент */}
           <div className="relative z-20 mb-12 flex flex-col items-center justify-center p-6 rounded-3xl border border-border/40 bg-card/40 backdrop-blur-xl shadow-2xl">
-            <div className="relative size-40 md:size-48 flex items-center justify-center">
-              {/* Тут ти можеш замінити шлях на свій реальний PNG файл, наприклад /images/folders.png */}
+            <div className="relative size-36 md:size-44 flex items-center justify-center">
               <div className="absolute inset-0 bg-[oklch(0.93_0.05_158)] rounded-full blur-2xl opacity-50" />
-              <Image
-                src="/images/folders.png" 
-                alt="Папки з документами"
-                width={180}
-                height={180}
-                className="relative z-10 object-contain drop-shadow-xl"
-                priority
-                onError={(e) => {
-                  // Запасний варіант, якщо PNG ще не завантажено у папку public
-                  e.currentTarget.style.display = 'none'
-                }}
-              />
-              {/* Fallback іконка, якщо картинки ще немає */}
-              <Folder className="absolute size-24 text-[oklch(0.5_0.11_158)] opacity-80" />
+              <Folder className="absolute size-20 text-[oklch(0.5_0.11_158)] opacity-90" />
             </div>
-            <span className="mt-4 font-display text-sm font-semibold text-muted-foreground uppercase tracking-widest">
+            <span className="mt-3 font-display text-sm font-semibold text-muted-foreground uppercase tracking-widest">
               Архів документів
             </span>
           </div>
