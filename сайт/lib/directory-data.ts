@@ -269,17 +269,7 @@ export const directory: DirectorySection[] = [
       { title: "БП відкриття", description: "Бізнес-процеси запуску нової точки", url: "#", tag: "Документ" },
     ],
   },
-  {
-    id: "process",
-    title: "БП лайк",
-    description: "Бізнес-процеси та регламенти роботи.",
-    icon: "process",
-    accent: "lime",
-    links: [
-      { title: "Опис бізнес-процесів", description: "Як влаштована робота", url: "#", tag: "Документ" },
-      { title: "Регламенти", description: "Правила та стандарти", url: "#", tag: "Google Drive" },
-    ],
-  },
+ 
   {
     id: "booking",
     title: "Онлайн запис і лояльність",
@@ -289,18 +279,6 @@ export const directory: DirectorySection[] = [
     links: [
       { title: "Система онлайн-запису", description: "Кабінет адміністрування", url: "#", tag: "Сервіс" },
       { title: "Програма лояльності", description: "Умови та налаштування", url: "#", tag: "Документ" },
-    ],
-  },
-  {
-    id: "repair",
-    title: "Ремонт та відкриття точки",
-    description: "Чек-листи ремонту, запуску та контакти підрядників.",
-    icon: "repair",
-    accent: "teal",
-    links: [
-      { title: "Чек-лист відкриття точки", description: "Кроки до запуску", url: "#", tag: "Чек-лист" },
-      { title: "Довідник з ремонту", description: "Що робити при поломках", url: "#", tag: "Документ" },
-      { title: "Контакти підрядників", description: "Сантехнік, електрик, майстри", url: "#", tag: "Контакти" },
     ],
   },
 ]
