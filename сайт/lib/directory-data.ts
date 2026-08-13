@@ -270,15 +270,18 @@ export const directory: DirectorySection[] = [
     ],
   },
  
-  {
+{
     id: "booking",
     title: "Онлайн запис і лояльність",
     description: "Система онлайн-запису та програма лояльності.",
     icon: "booking",
     accent: "purple",
     links: [
-      { title: "Система онлайн-запису", description: "Кабінет адміністрування", url: "#", tag: "Сервіс" },
-      { title: "Програма лояльності", description: "Умови та налаштування", url: "#", tag: "Документ" },
+      { title: "Вланч для клієнтів", description: "Клієнтський інтерфейс запису", url: "#", tag: "Wlaunch" },
+      { title: "Вланч для адмінів", description: "Адмін-панель керування", url: "#", tag: "Wlaunch" },
+      { title: "База клієнтів Вланч", description: "CRM-база відвідувачів", url: "#", tag: "Wlaunch" },
+      { title: "Гугл скрипт для таблиці клієнтів", description: "Автоматизація та скрипти", url: "#", tag: "Google Script" },
+      { title: "Прайс для Вланч завантаження", description: "Файл імпорту прайсу в систему", url: "#", tag: "Upload" },
     ],
   },
 ]
