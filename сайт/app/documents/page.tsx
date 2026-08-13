@@ -1,104 +1,170 @@
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, ArrowUpRight, FileText, Folder } from "lucide-react"
-import { directory } from "@/lib/directory-data"
+import { 
+  ArrowLeft, 
+  FileText, 
+  ExternalLink, 
+  Table, 
+  Users, 
+  Building2, 
+  Droplets, 
+  FolderInput, 
+  ClipboardCheck, 
+  KeyRound, 
+  UserCheck, 
+  CheckSquare, 
+  Files 
+} from "lucide-react"
+
+const documentsList = [
+  {
+    title: "Таблиця оренди",
+    description: "Зведена адреси, вартості, термін дії",
+    url: "https://drive.google.com/drive/folders/1jUgVc2NvwF_rE4glyFjlo-jZEB1RAfD5?usp=drive_link",
+    tag: "Google Drive",
+    icon: Table,
+  },
+  {
+    title: "Документи майстрів",
+    description: "Документи та договори оренди з майстрами",
+    url: "https://drive.google.com/drive/folders/1myvZDZIz0FT6ufRDV00HGUF9f_UNlEI5?usp=sharing",
+    tag: "Google Drive",
+    icon: Users,
+  },
+  {
+    title: "ФОП Мокляк А.Ю.",
+    description: "Установчі по ФОП",
+    url: "https://drive.google.com/drive/folders/1UQS73cLGyuigKAY6Q2Z2Ig6PQ1tKHJKA?usp=drive_link",
+    tag: "Google Drive",
+    icon: Building2,
+  },
+  {
+    title: "Затоплення Л2",
+    description: "Матеріали по інциденту",
+    url: "https://drive.google.com/drive/folders/1vmvfnRsDvQz-T0YaQTgMbymgTpdSknsJ?usp=drive_link",
+    tag: "Google Drive",
+    icon: Droplets,
+  },
+  {
+    title: "Гугл форми",
+    description: "Для майстрів та клієнтів",
+    url: "https://drive.google.com/drive/folders/1fcQDBz06bBGBdGnao6vLrel8BKAKv4ch?usp=drive_link",
+    tag: "Google Forms",
+    icon: FolderInput,
+  },
+  {
+    title: "Інвентаризація",
+    description: "Остання 2026",
+    url: "https://drive.google.com/drive/folders/1xt4Qa7fkLbarXcI_KD4kwpIxorb0V4d1?usp=drive_link",
+    tag: "Google Sheets",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Паролі",
+    description: "Остання 2026",
+    url: "https://drive.google.com/drive/folders/1jNNUatyG4Rbmdozju-I6iNxGJEhreK6z?usp=drive_link",
+    tag: "Secure",
+    icon: KeyRound,
+  },
+  {
+    title: "Старший перукар",
+    description: "Інструкції та обов'язки",
+    url: "https://drive.google.com/drive/folders/1ZMPCElRbuIhnWNsGwUjsSnfaTJAvTav2?usp=drive_link",
+    tag: "Google Drive",
+    icon: UserCheck,
+  },
+  {
+    title: "Перевірка лайк",
+    description: "Камери та чек-лист",
+    url: "https://drive.google.com/drive/folders/1SAJCg0lWdpWcMN50XJRtVl91CMkutKuT?usp=drive_link",
+    tag: "Checklist",
+    icon: CheckSquare,
+  },
+  {
+    title: "Шаблони документів",
+    description: "Для друку",
+    url: "https://drive.google.com/drive/folders/1UXuf91q9s56q7AIRXhG-R7wosRYWEFk0?usp=drive_link",
+    tag: "Google Docs",
+    icon: Files,
+  },
+]
 
 export default function DocumentsPage() {
-  const documentsSection = directory.find((s) => s.id === "documents")
-  const links = documentsSection ? documentsSection.links : []
-
   return (
-    <main className="relative min-h-screen overflow-hidden p-6 md:p-12">
-      {/* Абстракція на фон */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_oklch(0.93_0.05_158/0.4),_transparent_40%),radial-gradient(circle_at_80%_80%,_oklch(0.9_0.08_180/0.3),_transparent_40%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-
-      <div className="relative mx-auto max-w-6xl z-10">
-        {/* Кнопка назад */}
+    <main className="min-h-screen bg-background px-4 py-8 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-6xl">
+        {/* Кнопка повернення */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground mb-8"
         >
           <ArrowLeft className="size-4" />
-          Назад до головної
+          Назад на головну
         </Link>
 
-        {/* Шапка сторінки */}
-        <div className="relative mb-12 overflow-hidden rounded-3xl border border-border/60 bg-card/80 p-8 shadow-sm backdrop-blur-md">
-          <span className="absolute inset-x-0 top-0 h-1.5 w-full bg-[oklch(0.66_0.11_158)]" aria-hidden="true" />
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)]">
-              <FileText className="size-8" />
+        {/* Шапка розділу */}
+        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-6 md:p-8 shadow-sm backdrop-blur-sm">
+          <div className="absolute top-0 left-0 h-1.5 w-full bg-[oklch(0.66_0.11_158)]" aria-hidden="true" />
+          <div className="flex items-center gap-5">
+            <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] shadow-inner">
+              <FileText className="size-7" />
             </span>
             <div>
-              <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+              <h1 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
                 Документи
               </h1>
-              <p className="mt-1 text-muted-foreground text-base">
-                Регламенти, інструкції та внутрішня документація мережі.
+              <p className="mt-1 text-sm text-muted-foreground md:text-base leading-relaxed">
+                Усі робочі матеріали, таблиці та посилання на Google Диску мережі «Лайк».
               </p>
             </div>
           </div>
         </div>
 
-        {/* Центральний блок та навколишні папки */}
-        <div className="relative flex flex-col items-center justify-center min-h-[400px] py-6">
-          
-          {/* Центральний декоративний елемент */}
-          <div className="relative z-20 mb-12 flex flex-col items-center justify-center p-6 rounded-3xl border border-border/40 bg-card/40 backdrop-blur-xl shadow-2xl">
-            <div className="relative size-36 md:size-44 flex items-center justify-center">
-              <div className="absolute inset-0 bg-[oklch(0.93_0.05_158)] rounded-full blur-2xl opacity-50" />
-              <Folder className="absolute size-20 text-[oklch(0.5_0.11_158)] opacity-90" />
-            </div>
-            <span className="mt-3 font-display text-sm font-semibold text-muted-foreground uppercase tracking-widest">
-              Архів документів
-            </span>
-          </div>
-
-          {/* Навколишні папки з посиланнями */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full relative z-20">
-            {links.map((link, idx) => {
-              const isReal = link.url.startsWith("http")
-
-              return (
-                <a
-                  key={idx}
-                  href={link.url}
-                  target={isReal ? "_blank" : undefined}
-                  rel="noreferrer"
-                  className="group relative flex items-start gap-4 rounded-3xl border border-border/70 bg-card/90 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[oklch(0.66_0.11_158)] hover:shadow-lg"
-                >
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] transition-transform group-hover:scale-110">
-                    <Folder className="size-6" />
-                  </span>
-
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors truncate">
-                        {link.title}
-                      </h3>
-                      <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground shrink-0" />
-                    </div>
-
-                    {link.description && (
-                      <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
-                        {link.description}
-                      </p>
-                    )}
-
-                    {link.tag && (
-                      <span className="mt-3 inline-block rounded-full bg-[oklch(0.94_0.04_158)] px-2.5 py-0.5 text-[10px] font-medium text-[oklch(0.45_0.09_158)]">
-                        {link.tag}
-                      </span>
-                    )}
+        {/* Сітка посилань з іконками */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {documentsList.map((item) => {
+            const isReal = item.url.startsWith("http")
+            const IconComponent = item.icon
+            return (
+              <a
+                key={item.title}
+                href={item.url}
+                target={isReal ? "_blank" : undefined}
+                rel="noreferrer"
+                className="group flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[oklch(0.66_0.11_158)] hover:shadow-md"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] transition-transform duration-200 group-hover:scale-105">
+                      <IconComponent className="size-5" />
+                    </span>
+                    <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                   </div>
-                </a>
-              )
-            })}
-          </div>
+                  
+                  <h2 className="font-display font-semibold text-lg text-foreground group-hover:text-[oklch(0.5_0.11_158)] transition-colors leading-snug">
+                    {item.title}
+                  </h2>
+                  
+                  {item.description ? (
+                    <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                      {item.description}
+                    </p>
+                  ) : null}
+                </div>
 
+                {item.tag ? (
+                  <div className="mt-5 pt-3 border-t border-border/40 flex items-center">
+                    <span className="rounded-full bg-[oklch(0.94_0.04_158)] px-2.5 py-1 text-[11px] font-medium text-[oklch(0.45_0.09_158)] leading-none">
+                      {item.tag}
+                    </span>
+                  </div>
+                ) : null}
+              </a>
+            )
+          })}
         </div>
       </div>
     </main>
+  )
+}
   )
 }
