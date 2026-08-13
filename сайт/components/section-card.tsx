@@ -141,7 +141,7 @@ export function SectionCard({ section, forceOpen }: { section: DirectorySection;
   const accent = accentMap[section.accent]
 
   // Перевіряємо, чи для цього розділу потрібна окрема сторінка
-  const hasPage = ["documents", "analytics", "structure", "pos"].includes(section.id)
+  const hasPage = ["documents", "analytics", "structure", "pos", const hasPage = ["documents", "analytics", "structure", "pos", "links"].includes(section.id)].includes(section.id)
 
   return (
     <section
