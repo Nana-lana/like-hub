@@ -168,17 +168,38 @@ export const directory: DirectorySection[] = [
       { title: "Книга перукаря", description: "Стандарти роботи майстрів", url: "#", tag: "Документ" },
     ],
   },
-  {
+ {
     id: "pos",
     title: "POS матеріали",
     description: "Рекламні та оформлювальні матеріали для точок.",
     icon: "pos",
     accent: "pink",
     links: [
-      { title: "Папка POS-матеріалів", description: "Макети, банери, наклейки", url: "#", tag: "Google Drive" },
-      { title: "Брендбук", description: "Логотипи, кольори, шрифти", url: "#", tag: "Документ" },
+      // Google Диск / Матеріали
+      { title: "Перша стрижка", description: "Матеріали та макети", url: "#", tag: "Google Drive" },
+      { title: "Трафарет", description: "Макет трафарету", url: "#", tag: "Google Drive" },
+      { title: "Іконки соц мереж", description: "Набір іконок", url: "#", tag: "Google Drive" },
+      { title: "Прайс", description: "Актуальні прайси", url: "#", tag: "Google Drive" },
+      { title: "Карта лояльності", description: "Макет картки", url: "#", tag: "Google Drive" },
+      { title: "Аудіо реклаמה", description: "Аудіоматеріали для точок", url: "#", tag: "Google Drive" },
+      { title: "Футболки", description: "Брендований одяг", url: "#", tag: "Google Drive" },
+      { title: "Лого", description: "Логотипи у різних форматах", url: "#", tag: "Brand" },
+      { title: "Брендбук", description: "Керівництво з використання бренду", url: "#", tag: "Document" },
+      { title: "ТГ контент", description: "Матеріали для Telegram", url: "#", tag: "Telegram" },
+      
+      // Canva дизайни
+      { title: "Знижки день студента, для військових", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Плакат по місту А5", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Акція -30%", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Акція -30%", description: "Дубль шаблону Canva", url: "#", tag: "Canva" },
+      { title: "Цінники косметика", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Онлайн запис", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Візитки нові", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Іконки соцмереж", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Буду через 10 хв", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      { title: "Сертифікати", description: "Шаблон Canva", url: "#", tag: "Canva" },
     ],
-  },
+  },,
   {
     id: "links",
     title: "Посилання",
