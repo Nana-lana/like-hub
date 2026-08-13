@@ -253,8 +253,8 @@ export const directory: DirectorySection[] = [
     icon: "payments",
     accent: "violet",
     links: [
-      { title: "Платіжний календар", description: "Усі платежі за датами", url: "#", tag: "Google Sheets" },
-      { title: "Оренда та комуналка", description: "Регулярні платежі по точках", url: "#", tag: "Google Sheets" },
+      { title: "Платіжний календар", description: "Усі планові платежі за датами місяця", url: "#", tag: "Google Sheets" },
+      { title: "Оренда та комуналка", description: "Графік розрахунків за приміщення точок", url: "#", tag: "Google Sheets" },
     ],
   },
   {
