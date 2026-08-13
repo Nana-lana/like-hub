@@ -257,15 +257,16 @@ export const directory: DirectorySection[] = [
       { title: "Оренда та комуналка", description: "Графік розрахунків за приміщення точок", url: "#", tag: "Google Sheets" },
     ],
   },
-  {
+{
     id: "database",
     title: "Бази даних",
     description: "Клієнтські та робочі бази мережі.",
     icon: "database",
     accent: "green",
     links: [
-      { title: "База клієнтів", description: "Загальна клієнтська база", url: "#", tag: "База" },
-      { title: "База постачальників", description: "Контакти та умови", url: "#", tag: "Google Sheets" },
+      { title: "База клієнтів", description: "Загальна клієнтська база мережі", url: "#", tag: "База" },
+      { title: "Постачальники", description: "Контакти, прайси та умови співпраці", url: "#", tag: "Google Sheets" },
+      { title: "БП відкриття", description: "Бізнес-процеси запуску нової точки", url: "#", tag: "Документ" },
     ],
   },
   {
