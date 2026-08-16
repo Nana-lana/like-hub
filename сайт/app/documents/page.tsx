@@ -1,8 +1,6 @@
 import Link from "next/link"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import { 
-  ArrowLeft, 
-  FileText, 
-  ExternalLink, 
   Table, 
   Users, 
   Building2, 
@@ -101,26 +99,21 @@ export default function DocumentsPage() {
           Назад на головну
         </Link>
 
-        {/* Шапка розділу */}
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-6 md:p-8 shadow-sm backdrop-blur-sm">
-          <div className="absolute top-0 left-0 h-1.5 w-full bg-[oklch(0.66_0.11_158)]" aria-hidden="true" />
-          <div className="flex items-center gap-5">
-            <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] shadow-inner">
-              <FileText className="size-7" />
-            </span>
-            <div>
-              <h1 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-                Документи
-              </h1>
-              <p className="mt-1 text-sm text-muted-foreground md:text-base leading-relaxed">
-                Усі робочі матеріали, таблиці та посилання на Google Диску мережі «Лайк».
-              </p>
-            </div>
+        {/* Шапка розділу з темно-зеленою заливкою зверху та білим текстом */}
+        <div className="relative mb-12 overflow-hidden rounded-3xl border border-border bg-card/90 shadow-sm backdrop-blur-sm">
+          <div className="absolute top-0 left-0 h-12 w-full bg-[oklch(0.45_0.11_158)]" aria-hidden="true" />
+          <div className="px-6 md:px-8 pt-16 pb-8">
+            <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+              Документи
+            </h1>
+            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed">
+              Усі робочі матеріали, таблиці та посилання на Google Диску мережі «Лайк».
+            </p>
           </div>
         </div>
 
-        {/* Сітка посилань з іконками */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Сітка карток у новому стилі */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {documentsList.map((item) => {
             const isReal = item.url.startsWith("http")
             const IconComponent = item.icon
@@ -130,16 +123,26 @@ export default function DocumentsPage() {
                 href={item.url}
                 target={isReal ? "_blank" : undefined}
                 rel="noreferrer"
-                className="group flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[oklch(0.66_0.11_158)] hover:shadow-md"
+                className="group relative flex flex-col justify-between rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[oklch(0.66_0.11_158)] hover:shadow-md overflow-hidden"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] transition-transform duration-200 group-hover:scale-105">
-                      <IconComponent className="size-5" />
-                    </span>
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    {/* Контейнер для фонових кіл та емблеми */}
+                    <div className="relative size-20 shrink-0 flex items-center justify-center">
+                      {/* Форові декоративні кружечки */}
+                      <div className="absolute -top-2 -left-2 size-12 rounded-full border border-[oklch(0.66_0.11_158/0.3)] bg-[oklch(0.93_0.05_158/0.2)] transition-transform duration-300 group-hover:scale-110" />
+                      <div className="absolute -bottom-1 -right-1 size-10 rounded-full border border-[oklch(0.66_0.11_158/0.2)] bg-[oklch(0.93_0.05_158/0.3)]" />
+                      
+                      {/* Головний кружечок з іконкою */}
+                      <div className="relative z-10 flex size-16 items-center justify-center rounded-full bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                        <IconComponent className="size-7" />
+                      </div>
+                    </div>
+
                     <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                   </div>
                   
+                  {/* Заголовок та опис */}
                   <h2 className="font-display font-semibold text-lg text-foreground group-hover:text-[oklch(0.5_0.11_158)] transition-colors leading-snug">
                     {item.title}
                   </h2>
@@ -152,7 +155,7 @@ export default function DocumentsPage() {
                 </div>
 
                 {item.tag ? (
-                  <div className="mt-5 pt-3 border-t border-border/40 flex items-center">
+                  <div className="mt-6 pt-3 border-t border-border/40 flex items-center">
                     <span className="rounded-full bg-[oklch(0.94_0.04_158)] px-2.5 py-1 text-[11px] font-medium text-[oklch(0.45_0.09_158)] leading-none">
                       {item.tag}
                     </span>
