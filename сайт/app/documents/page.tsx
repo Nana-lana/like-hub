@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { ArrowLeft, ExternalLink, FileText } from "lucide-react"
 import { 
   Table, 
   Users, 
@@ -12,6 +12,7 @@ import {
   CheckSquare, 
   Files 
 } from "lucide-react"
+import { PageHeader } from "@/components/page-header"
 
 const documentsList = [
   {
@@ -99,18 +100,13 @@ export default function DocumentsPage() {
           Назад на головну
         </Link>
 
-        {/* Шапка розділу з темно-зеленою заливкою зверху та білим текстом */}
-        <div className="relative mb-12 overflow-hidden rounded-3xl border border-border bg-card/90 shadow-sm backdrop-blur-sm">
-          <div className="absolute top-0 left-0 h-12 w-full bg-[oklch(0.45_0.11_158)]" aria-hidden="true" />
-          <div className="px-6 md:px-8 pt-16 pb-8">
-            <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-              Документи
-            </h1>
-            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed">
-              Усі робочі матеріали, таблиці та посилання на Google Диску мережі «Лайк».
-            </p>
-          </div>
-        </div>
+        {/* Нова уніфікована шапка */}
+        <PageHeader
+          icon={FileText}
+          title="Документи"
+          description="Усі робочі матеріали, таблиці та посилання на Google Диску мережі «Лайк»."
+          hue={158}
+        />
 
         {/* Сітка карток у новому стилі */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
