@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, FolderInput, KeyRound, UserCheck, CheckSquare, Files, Layers, Contact } from "lucide-react"
+import Link from "next/link"import Link from "next/link"
+import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, FolderInput, KeyRound, UserCheck, CheckSquare, Files, Layers, Contact, Gift } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 
 // Основні документи / загальні розділи
@@ -73,6 +73,69 @@ const mastersDocuments = [
   },
 ]
 
+// Дані днів народжень майстрів по місяцях
+const birthdaysByMonth = [
+  {
+    month: "Лютий",
+    items: [
+      { date: "18.02", name: "Мамчич Віта" },
+      { date: "19.02", name: "Грушевська Мирослава" },
+      { date: "28.02", name: "Камуз Ольга" },
+    ],
+  },
+  {
+    month: "Березень",
+    items: [{ date: "20.03", name: "Горнило Дарія" }],
+  },
+  {
+    month: "Квітень",
+    items: [{ date: "06.04", name: "Верхола Ларіса" }],
+  },
+  {
+    month: "Травень",
+    items: [{ date: "11.05", name: "Бугай Юлія" }],
+  },
+  {
+    month: "Червень",
+    items: [
+      { date: "13.06", name: "Аня Кощенко" },
+      { date: "16.06", name: "Дядюн Юлія" },
+      { date: "21.06", name: "Венько Світлана" },
+      { date: "25.06", name: "Пронькіна Вероніка" },
+    ],
+  },
+  {
+    month: "Липень",
+    items: [
+      { date: "13.07", name: "Яковенко Наташа" },
+      { date: "29.07", name: "Жовта Наталія" },
+    ],
+  },
+  {
+    month: "Серпень",
+    items: [
+      { date: "03.08", name: "Пантюк Лера" },
+      { date: "07.08", name: "Гузьома Вікторія" },
+      { date: "18.08", name: "Діана Бойко" },
+      { date: "20.08", name: "Темна Катя" },
+    ],
+  },
+  {
+    month: "Жовтень",
+    items: [
+      { date: "01.10", name: "Кубинець Ольга" },
+      { date: "03.10", name: "Єгорова Людмила" },
+      { date: "06.10", name: "Лапіга Світлана" },
+      { date: "14.10", name: "Ольга Лісюченко" },
+      { date: "19.10", name: "Шамрай Света" },
+    ],
+  },
+  {
+    month: "Грудень",
+    items: [{ date: "19.12", name: "Сахно Наташа" }],
+  },
+]
+
 export default function DocumentsPage() {
   return (
     <main className="min-h-screen bg-background px-4 py-8 md:px-8 lg:px-12">
@@ -143,7 +206,7 @@ export default function DocumentsPage() {
         </section>
 
         {/* Секція 2: Робота з майстрами */}
-        <section>
+        <section className="mb-12">
           <h2 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
             <Users className="size-5 text-[oklch(0.5_0.11_158)]" />
             Робота з майстрами
@@ -189,6 +252,36 @@ export default function DocumentsPage() {
                 </a>
               )
             })}
+          </div>
+        </section>
+
+        {/* Секція 3: Дні народження майстрів */}
+        <section>
+          <h2 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <Gift className="size-5 text-[oklch(0.5_0.11_158)]" />
+            Дні народження майстрів
+          </h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {birthdaysByMonth.map((group) => (
+              <div
+                key={group.month}
+                className="rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm"
+              >
+                <h3 className="font-display font-semibold text-lg text-[oklch(0.5_0.11_158)] mb-4 pb-2 border-b border-border/40">
+                  {group.month}
+                </h3>
+                <ul className="space-y-2.5">
+                  {group.items.map((person, idx) => (
+                    <li key={idx} className="flex items-center justify-between text-sm">
+                      <span className="font-medium text-foreground">{person.name}</span>
+                      <span className="rounded-full bg-[oklch(0.94_0.04_158)] px-2.5 py-0.5 text-xs font-semibold text-[oklch(0.45_0.09_158)]">
+                        {person.date}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
       </div>
