@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, FolderInput, KeyRound, UserCheck, CheckSquare, Files, Layers } from "lucide-react"
+import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, FolderInput, KeyRound, UserCheck, CheckSquare, Files, Layers, Contact } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 
 // Основні документи / загальні розділи
@@ -34,7 +34,7 @@ const generalDocuments = [
   },
 ]
 
-// Новий окремий блок: Робота з майстрами
+// Блок: Робота з майстрами
 const mastersDocuments = [
   {
     title: "Документи майстрів",
@@ -42,6 +42,13 @@ const mastersDocuments = [
     url: "https://drive.google.com/drive/folders/1myvZDZIz0FT6ufRDV00HGUF9f_UNlEI5?usp=sharing",
     tag: "Google Drive",
     icon: Users,
+  },
+  {
+    title: "Контакти майстрів",
+    description: "Актуальна база контактів та телефонів",
+    url: "https://docs.google.com/spreadsheets/d/1tNsxLgJv8wNfud_35dTdQv5Ev3zan_Th/edit?usp=drive_link&ouid=112373292964682302363&rtpof=true&sd=true",
+    tag: "Google Sheets",
+    icon: Contact,
   },
   {
     title: "Книга перукаря та опитування",
@@ -70,7 +77,6 @@ export default function DocumentsPage() {
   return (
     <main className="min-h-screen bg-background px-4 py-8 md:px-8 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        {/* Кнопка повернення */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground mb-8"
@@ -79,7 +85,6 @@ export default function DocumentsPage() {
           Назад на головну
         </Link>
 
-        {/* Шапка розділу */}
         <PageHeader
           icon={FileText}
           title="Документи"
@@ -107,11 +112,9 @@ export default function DocumentsPage() {
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-6">
-                      {/* Чиста іконка без зайвих кружечків (як в аналітиці) */}
                       <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] shadow-sm transition-transform duration-300 group-hover:scale-105">
                         <IconComponent className="size-7" />
                       </div>
-
                       <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                     </div>
                     
@@ -159,11 +162,9 @@ export default function DocumentsPage() {
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-6">
-                      {/* Чиста іконка без зайвих кружечків */}
                       <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_158)] text-[oklch(0.5_0.11_158)] shadow-sm transition-transform duration-300 group-hover:scale-105">
                         <IconComponent className="size-7" />
                       </div>
-
                       <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                     </div>
                     
