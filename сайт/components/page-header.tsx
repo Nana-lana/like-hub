@@ -9,7 +9,13 @@ interface PageHeaderProps {
 
 export function PageHeader({ icon: Icon, title, description, hue }: PageHeaderProps) {
   return (
-    <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm md:p-8">
+    <div 
+      className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-6 shadow-sm backdrop-blur-sm md:p-8"
+      style={{
+        background: `linear-gradient(135deg, var(--card) 60%, oklch(0.92 0.04 ${hue} / 0.4) 100%)`,
+        borderColor: `oklch(0.85 0.06 ${hue} / 0.4)`,
+      }}
+    >
       <div
         className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full blur-3xl"
         style={{ background: `oklch(0.82 0.09 ${hue} / 0.5)` }}
