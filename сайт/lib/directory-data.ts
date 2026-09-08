@@ -72,30 +72,14 @@ export const directory: DirectorySection[] = [
         url: "https://drive.google.com/drive/folders/1UQS73cLGyuigKAY6Q2Z2Ig6PQ1tKHJKA?usp=drive_link", 
         tag: "Google Drive" 
       },
-      { 
-        title: "Затоплення А2", 
-        description: "", 
-        url: "https://drive.google.com/drive/folders/1vmvfnRsDvQz-T0YaQTgMbymgTpdSknsJ?usp=drive_link", 
-        tag: "Google Drive" 
-      },
-      { 
-        title: "інвентаризація", 
-        description: "остання 2026", 
-        url: "https://drive.google.com/drive/folders/1xt4Qa7fkLbarXcI_KD4kwpIxorb0V4d1?usp=drive_link", 
-        tag: "Google Sheets" 
-      },
+      
       { 
         title: "паролі", 
         description: "остання 2026", 
         url: "https://drive.google.com/drive/folders/1jNNUatyG4Rbmdozju-I6iNxGJEhreK6z?usp=drive_link", 
         tag: "Secure" 
       },
-      { 
-        title: "старший перукар", 
-        description: "", 
-        url: "https://drive.google.com/drive/folders/1Sh_A8iXYeqbZZtBjLIZq78pdOEfcvbYr?usp=drive_link", 
-        tag: "Google Drive" 
-      },
+     
       { 
         title: "Шаблони документів", 
         description: "для друку", 
