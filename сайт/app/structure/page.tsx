@@ -13,7 +13,7 @@ const structureIconMap: Record<string, any> = {
 export default function StructurePage() {
   const structureSection = directory.find((s) => s.id === "structure")
   
-  // Прибираємо "Книга перукаря" (і якщо потрібно, саму "Оргструктура мережі", якщо вона дублюється)
+  // Прибираємо зайві картки зі списку на цій сторінці
   const links = structureSection 
     ? structureSection.links.filter((link) => link.title !== "Книга перукаря" && link.title !== "Оргструктура мережі") 
     : []
@@ -30,7 +30,7 @@ export default function StructurePage() {
           Назад до головної
         </Link>
 
-        {/* Шапка сторінки з градієнтним фоном та свіченням */}
+        {/* Головна шапка сторінки з градієнтним фоном та свіченням */}
         <div 
           className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm"
           style={{
