@@ -5,11 +5,18 @@ import { directory } from "@/lib/directory-data"
 const structureIconMap: Record<string, any> = {
   "Оргструктура мережі": Users,
   "Посадові інструкції": FileText,
+  "Посадова інструкція CEO": FileText,
+  "Посадова інструкція менеджера з розвитку": FileText,
+  "Посадова інструкція адміністратора": FileText,
 }
 
 export default function StructurePage() {
   const structureSection = directory.find((s) => s.id === "structure")
-  const links = structureSection ? structureSection.links : []
+  
+  // Прибираємо "Книга перукаря" (і якщо потрібно, саму "Оргструктура мережі", якщо вона дублюється)
+  const links = structureSection 
+    ? structureSection.links.filter((link) => link.title !== "Книга перукаря" && link.title !== "Оргструктура мережі") 
+    : []
 
   return (
     <main className="min-h-screen p-6 md:p-12">
@@ -23,11 +30,26 @@ export default function StructurePage() {
           Назад до головної
         </Link>
 
-        {/* Шапка сторінки */}
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm">
-          <span className="absolute inset-x-0 top-0 h-1.5 w-full bg-[oklch(0.6_0.14_255)]" aria-hidden="true" />
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_255)] text-[oklch(0.5_0.13_255)]">
+        {/* Шапка сторінки з градієнтним фоном та свіченням */}
+        <div 
+          className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm"
+          style={{
+            background: `linear-gradient(135deg, var(--card) 60%, oklch(0.92 0.05 255 / 0.4) 100%)`,
+            borderColor: `oklch(0.82 0.08 255 / 0.4)`,
+          }}
+        >
+          <div
+            className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `oklch(0.82 0.09 255 / 0.5)` }}
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <span 
+              className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
+              style={{
+                background: `linear-gradient(135deg, oklch(0.6 0.14 255), oklch(0.48 0.15 270))`,
+              }}
+            >
               <Network className="size-8" />
             </span>
             <div>
