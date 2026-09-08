@@ -29,11 +29,26 @@ export default function AnalyticsPage() {
           Назад до головної
         </Link>
 
-        {/* Головна шапка сторінки (як на сторінці Документи) */}
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm">
-          <span className="absolute inset-x-0 top-0 h-1.5 w-full bg-[oklch(0.62_0.13_300)]" aria-hidden="true" />
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.93_0.05_300)] text-[oklch(0.5_0.13_300)]">
+        {/* Головна шапка сторінки з градієнтним фоном та свіченням */}
+        <div 
+          className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm"
+          style={{
+            background: `linear-gradient(135deg, var(--card) 60%, oklch(0.92 0.05 300 / 0.4) 100%)`,
+            borderColor: `oklch(0.82 0.08 300 / 0.4)`,
+          }}
+        >
+          <div
+            className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `oklch(0.82 0.09 300 / 0.5)` }}
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <span 
+              className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
+              style={{
+                background: `linear-gradient(135deg, oklch(0.68 0.13 300), oklch(0.55 0.14 320))`,
+              }}
+            >
               <BarChart3 className="size-8" />
             </span>
             <div>
