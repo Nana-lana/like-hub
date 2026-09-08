@@ -79,12 +79,6 @@ export const directory: DirectorySection[] = [
         tag: "Google Drive" 
       },
       { 
-        title: "гугл форми", 
-        description: "для майстрів та клієнтів", 
-        url: "https://drive.google.com/drive/folders/1fcQDBz06bBGBdGnao6vLrel8BKAKv4ch?usp=drive_link", 
-        tag: "Google Forms" 
-      },
-      { 
         title: "інвентаризація", 
         description: "остання 2026", 
         url: "https://drive.google.com/drive/folders/1xt4Qa7fkLbarXcI_KD4kwpIxorb0V4d1?usp=drive_link", 
@@ -99,14 +93,8 @@ export const directory: DirectorySection[] = [
       { 
         title: "старший перукар", 
         description: "", 
-        url: "https://drive.google.com/drive/folders/1ZMPCElRbuIhnWNsGwUjsSnfaTJAvTav2?usp=drive_link", 
+        url: "https://drive.google.com/drive/folders/1Sh_A8iXYeqbZZtBjLIZq78pdOEfcvbYr?usp=drive_link", 
         tag: "Google Drive" 
-      },
-      { 
-        title: "перевірка лайк", 
-        description: "камери та чек лист", 
-        url: "https://drive.google.com/drive/folders/1SAJCg0lWdpWcMN50XJRtVl91CMkutKuT?usp=drive_link", 
-        tag: "Checklist" 
       },
       { 
         title: "Шаблони документів", 
@@ -181,7 +169,7 @@ export const directory: DirectorySection[] = [
       { title: "Іконки соц мереж", description: "Набір іконок", url: "#", tag: "Google Drive" },
       { title: "Прайс", description: "Актуальні прайси", url: "#", tag: "Google Drive" },
       { title: "Карта лояльності", description: "Макет картки", url: "#", tag: "Google Drive" },
-      { title: "Аудіо реклаמה", description: "Аудіоматеріали для точок", url: "#", tag: "Google Drive" },
+      { title: "Аудіо реклама", description: "Аудіоматеріали для точок", url: "#", tag: "Google Drive" },
       { title: "Футболки", description: "Брендований одяг", url: "#", tag: "Google Drive" },
       { title: "Лого", description: "Логотипи у різних форматах", url: "#", tag: "Brand" },
       { title: "Брендбук", description: "Керівництво з використання бренду", url: "#", tag: "Document" },
