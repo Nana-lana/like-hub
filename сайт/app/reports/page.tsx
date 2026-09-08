@@ -4,7 +4,36 @@ import { directory } from "@/lib/directory-data"
 
 export default function ReportsPage() {
   const reportsSection = directory.find((s) => s.id === "reports")
-  const links = reportsSection ? reportsSection.links : []
+  
+  // Базові посилання з файлу конфігурації за мінусом «Інвентаризація»
+  const baseLinks = reportsSection 
+    ? reportsSection.links.filter((link) => !link.title.toLowerCase().includes("інвентаризація")) 
+    : []
+
+  // Нові додані посилання
+  const customLinks = [
+    {
+      title: "Звіти відеоспостережень",
+      description: "Таблиця обліку та перевірок за записами камер.",
+      url: "https://docs.google.com/spreadsheets/d/1QAg15Hf31G4INaYi3_Wd_xQnwIMU0x848SvffBtViLE/edit?gid=0#gid=0",
+      tag: "Таблиця",
+    },
+    {
+      title: "Форма перевірки керуючої",
+      description: "Чек-лист оцінки роботи та дотримання регламентів.",
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSezA0d9WH9TLqbhJoJ4bhpsS_XFTjLvNXrbfgPKrWtOyDAgBA/viewform?usp=sharing&ouid=112373292964682302363",
+      tag: "Форма",
+    },
+    {
+      title: "Авансовий звіт",
+      description: "Облік витрат та фінансових операцій.",
+      url: "https://docs.google.com/spreadsheets/d/1kUBtAiJU_u0C-PgHeruojpWxbxnbZG_kmn-Ug1KnKlE/edit?usp=drive_link",
+      tag: "Фінанси",
+    },
+  ]
+
+  // Об'єднуємо (можна налаштувати порядок за бажанням)
+  const links = [...baseLinks, ...customLinks]
 
   return (
     <main className="min-h-screen p-6 md:p-12">
@@ -18,11 +47,26 @@ export default function ReportsPage() {
           Назад до головної
         </Link>
 
-        {/* Шапка сторінки */}
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm">
-          <span className="absolute inset-x-0 top-0 h-1.5 w-full bg-[oklch(0.75_0.12_70)]" aria-hidden="true" />
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-[oklch(0.94_0.06_78)] text-[oklch(0.52_0.1_62)]">
+        {/* Шапка сторінки з градієнтним фоном та свіченням */}
+        <div 
+          className="relative mb-10 overflow-hidden rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm"
+          style={{
+            background: `linear-gradient(135deg, var(--card) 60%, oklch(0.92 0.05 70 / 0.4) 100%)`,
+            borderColor: `oklch(0.82 0.08 70 / 0.4)`,
+          }}
+        >
+          <div
+            className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `oklch(0.82 0.09 70 / 0.5)` }}
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <span 
+              className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
+              style={{
+                background: `linear-gradient(135deg, oklch(0.75 0.12 70), oklch(0.60 0.13 60))`,
+              }}
+            >
               <ClipboardList className="size-8" />
             </span>
             <div>
@@ -30,7 +74,7 @@ export default function ReportsPage() {
                 Звіти
               </h1>
               <p className="mt-1 text-muted-foreground text-base">
-                Форми щоденної та місячної звітності, показники точок, інвентаризація та фінанси.
+                Форми щоденної та місячної звітності, показники точок, відеоспостереження та фінанси.
               </p>
             </div>
           </div>
