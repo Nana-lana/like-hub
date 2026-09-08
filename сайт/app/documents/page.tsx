@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, FolderInput, KeyRound, UserCheck, CheckSquare, Files, Layers, Contact, Gift } from "lucide-react"
+import { ArrowLeft, ExternalLink, FileText, Table, Users, Building2, KeyRound, UserCheck, Files, Layers, Contact, Gift } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 
 // Основні документи / загальні розділи
@@ -34,7 +34,7 @@ const generalDocuments = [
   },
 ]
 
-// Блок: Робота з майстрами
+// Блок: Робота з майстрами (без Гугл форм та Перевірки лайк)
 const mastersDocuments = [
   {
     title: "Документи майстрів",
@@ -56,20 +56,6 @@ const mastersDocuments = [
     url: "https://drive.google.com/drive/folders/1Sh_A8iXYeqbZZtBjLIZq78pdOEfcvbYr?usp=drive_link",
     tag: "Google Drive",
     icon: UserCheck,
-  },
-  {
-    title: "Гугл форми",
-    description: "Для майстрів та клієнтів",
-    url: "https://drive.google.com/drive/folders/1fcQDBz06bBGBdGnao6vLrel8BKAKv4ch?usp=drive_link",
-    tag: "Google Forms",
-    icon: FolderInput,
-  },
-  {
-    title: "Перевірка лайк",
-    description: "Камери та чек-лист",
-    url: "https://drive.google.com/drive/folders/1SAJCg0lWdpWcMN50XJRtVl91CMkutKuT?usp=drive_link",
-    tag: "Checklist",
-    icon: CheckSquare,
   },
 ]
 
