@@ -53,7 +53,7 @@ const mastersDocuments = [
   {
     title: "Книга перукаря та опитування",
     description: "Інструкції, обов'язки та форми для майстрів",
-    url: "https://drive.google.com/drive/folders/1ZMPCElRbuIhnWNsGwUjsSnfaTJAvTav2?usp=drive_link",
+    url: "https://drive.google.com/drive/folders/1Sh_A8iXYeqbZZtBjLIZq78pdOEfcvbYr?usp=drive_link",
     tag: "Google Drive",
     icon: UserCheck,
   },
