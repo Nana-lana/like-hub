@@ -125,6 +125,12 @@ export const directory: DirectorySection[] = [
         url: "https://drive.google.com/drive/folders/1dqTEH4v2Dm_eldk88LlEBhTl2Yuqqz6E?usp=drive_link",
         tag: "Google Drive",
       },
+      {
+      title: "Щотижнева аналітика",
+      description: "Оперативні фінансові показники та завантаженість філій мережі Лайк.",
+      url: "https://docs.google.com/spreadsheets/d/1TWfidOoWRaUtmXuEJg2U9OTGJ7D2WnWKXSEs__UwuZ4/edit?gid=0#gid=0",
+      tag: "Google Sheets"
+    }
     ],
   },
   {
