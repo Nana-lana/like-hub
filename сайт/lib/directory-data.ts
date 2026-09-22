@@ -151,7 +151,6 @@ export const directory: DirectorySection[] = [
     icon: "pos",
     accent: "pink",
     links: [
-      // Матеріали з Google Диску
       { title: "Перша стрижка", description: "Матеріали та макети акції", url: "https://drive.google.com/drive/folders/1QCirT-wiCN5-50D_9Z2IlQEaRMxeAr01?usp=drive_link", tag: "Google Drive" },
       { title: "Трафарет", description: "Брендовані трафарети", url: "https://drive.google.com/drive/folders/1I06j2knVrsK07meLTfmMXKt8Lo3MTxdy?usp=drive_link", tag: "Google Drive" },
       { title: "Іконки соцмереж", description: "Набір іконок для соцмереж", url: "https://drive.google.com/drive/folders/1fiOvDopJAGJnn4NUMNmg2XCxtFrpt9yJ?usp=drive_link", tag: "Google Drive" },
@@ -171,8 +170,6 @@ export const directory: DirectorySection[] = [
       { title: "Сертифікати", description: "Подарункові сертифікати", url: "https://drive.google.com/file/d/1oFA0iuImfsmRYkmBUAY9LilNn-UnaHO0/view?usp=drive_link", tag: "Google Drive" },
       { title: "Флаєри різні (формат візитки)", description: "Збірка міні-флаєрів", url: "https://drive.google.com/file/d/1Hq0hqSTx9ktBqYY73VdYblKbJojFp2zz/view?usp=drive_link", tag: "Google Drive" },
       { title: "Цінники Л4 Л7", description: "Фірмові цінники для вітрин", url: "https://drive.google.com/file/d/1YugQeUVe9IuX5ovbLrRHUnqSKOLFNhNL/view?usp=drive_link", tag: "Google Drive" },
-
-      // Дизайни з Canva
       { title: "Лого (Canva)", description: "Редагований логотип у Canva", url: "https://canva.link/h8zqv0q95yfb86m", tag: "Canva" },
       { title: "Флаєр відкриття", description: "Макет для відкриття нових точок", url: "https://canva.link/3kn06qmeieksgjg", tag: "Canva" },
       { title: "Л8 відкриття на під'їзд", description: "Спеціальні макети для Л8", url: "https://canva.link/8v336dzhia2ygk3", tag: "Canva" },
@@ -215,19 +212,78 @@ export const directory: DirectorySection[] = [
     icon: "reports",
     accent: "amber",
     links: [
-      { title: "Щоденні продажі", description: "Облік щоденних надходжень", url: "#", tag: "Google Sheets" },
-      { title: "Асаічі", description: "цілі та планування", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 2", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 4", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 5", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 6", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 7", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Лайк 8", description: "Звіт по лайку", url: "#", tag: "Google Sheets" },
-      { title: "Продаж косметики", description: "Облік реалізації продукції", url: "#", tag: "Google Sheets" },
-      { title: "Інвентаризація", description: "остання 2026", url: "#", tag: "Google Sheets" },
-      { title: "Авансовий звіт старшого перукаря", description: "Аванси", url: "#", tag: "Google Sheets" },
-      { title: "ЗП майстрів", description: "Розрахунок заробітної плати", url: "#", tag: "Google Sheets" },
-      { title: "Інкасація лайк", description: "Облік готівки та інкасацій", url: "#", tag: "Google Sheets" },
+      { 
+        title: "щоденні продажі", 
+        description: "Облік щоденних надходжень", 
+        url: "https://docs.google.com/spreadsheets/d/1QqQvHg18vb0wYXDxp8WfqE-4rSrTPkepVIoD4fMWKWo/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "асаічі", 
+        description: "цілі та планування", 
+        url: "https://docs.google.com/spreadsheets/d/1D7AOqymAHxpFnNzFcPXi15op8snWHZRoNj8L_tup2Jk/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 2", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1tofNO0sWYp2q8kbs8QSzG4Nh_aevX0WZ9Tlc-2TwZNU/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 4", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1_LoUHhbMKYCmD1rzp7WdhlCZn6MhCQXVQDgQDCkf5rg/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 5", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1M7UeMGDai8t2fY99LIZO59nNzf_kCKPfprcZ5gfBk3Q/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 6", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1vxAqTsSXzOB4ImkbzqYJ2zTDawLcigy9Zc2QIqYgD-M/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 7", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1glL9bXI4wV9c-WweNgtdRpFoG-oxVRFMlxgKYyac9as/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "лайк 8", 
+        description: "Звіт по лайку", 
+        url: "https://docs.google.com/spreadsheets/d/1kmpUcZDH-5cFafPWelPD5b4dfb-nhVc6xg9CwwXlUb0/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "продаж косметики", 
+        description: "Облік реалізації продукції", 
+        url: "https://docs.google.com/spreadsheets/d/1jU29lCR1DIah13DA_5Xy4ha5DdakyOKv9MgJ6jhq5Ok/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "авансовий звіт керуючої", 
+        description: "Аванси", 
+        url: "https://docs.google.com/spreadsheets/d/1kUBtAiJU_u0C-PgHeruojpWxbxnbZG_kmn-Ug1KnKlE/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "дашборд лайк", 
+        description: "Зведений дашборд мережі", 
+        url: "https://docs.google.com/spreadsheets/d/1OUzlJ-mZ4M31B25Vv_M3PeDXJVS1etqqd4nuQtNi7tA/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "реклама гугл", 
+        description: "Аналітика рекламних кампаній", 
+        url: "https://docs.google.com/spreadsheets/d/1hnC88msLsPvYkSKqeEZGiMfNNGPM2R99/edit?usp=drive_link&ouid=112373292964682302363&rtpof=true&sd=true", 
+        tag: "Google Sheets" 
+      },
     ],
   },
   {
