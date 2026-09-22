@@ -1,18 +1,18 @@
 /**
  * ┌─────────────────────────────────────────────────────────────────────┐
- * │  ЯК РЕДАГУВАТИ ЦЕЙ ФАЙЛ                                                │
- * │                                                                       │
+ * │  ЯК РЕДАГУВАТИ ЦЕЙ ФАЙЛ                                             │
+ * │                                                                     │
  * │  Це єдине місце, де зберігаються всі розділи та посилання довідника.  │
- * │  Щоб додати посилання — знайдіть потрібний розділ (section) і         │
- * │  замініть url: "#" на своє посилання (або додайте новий обʼєкт):      │
- * │                                                                       │
- * │    {                                                                  │
- * │      title: "Назва посилання",                                        │
- * │      description: "Короткий опис (необовʼязково)",                    │
+ * │  Щоб додати посилання — знайдіть потрібний розділ (section) і        │
+ * │  замініть url: "#" на своє посилання (або додайте новий обʼєкт):     │
+ * │                                                                     │
+ * │    {                                                                │
+ * │      title: "Назва посилання",                                      │
+ * │      description: "Короткий опис (необовʼязково)",                   │
  * │      url: "https://...",   // вставте своє посилання                  │
- * │      tag: "Google Drive",  // необовʼязкова мітка                     │
- * │    }                                                                  │
- * │                                                                       │
+ * │      tag: "Google Drive",  // необовʼязкова мітка                   │
+ * │    }                                                                │
+ * │                                                                     │
  * │  Щоб прибрати посилання — просто видаліть відповідний обʼєкт.         │
  * └─────────────────────────────────────────────────────────────────────┘
  */
@@ -72,14 +72,12 @@ export const directory: DirectorySection[] = [
         url: "https://drive.google.com/drive/folders/1UQS73cLGyuigKAY6Q2Z2Ig6PQ1tKHJKA?usp=drive_link", 
         tag: "Google Drive" 
       },
-      
       { 
         title: "паролі", 
         description: "остання 2026", 
         url: "https://drive.google.com/drive/folders/1jNNUatyG4Rbmdozju-I6iNxGJEhreK6z?usp=drive_link", 
         tag: "Secure" 
       },
-     
       { 
         title: "Шаблони документів", 
         description: "для друку", 
@@ -126,11 +124,11 @@ export const directory: DirectorySection[] = [
         tag: "Google Drive",
       },
       {
-      title: "Щотижнева аналітика",
-      description: "Оперативні фінансові показники та завантаженість філій мережі Лайк.",
-      url: "https://docs.google.com/spreadsheets/d/1TWfidOoWRaUtmXuEJg2U9OTGJ7D2WnWKXSEs__UwuZ4/edit?gid=0#gid=0",
-      tag: "Google Sheets"
-    }
+        title: "Щотижнева аналітика",
+        description: "Оперативні фінансові показники та завантаженість філій мережі Лайк.",
+        url: "https://docs.google.com/spreadsheets/d/1TWfidOoWRaUtmXuEJg2U9OTGJ7D2WnWKXSEs__UwuZ4/edit?gid=0#gid=0",
+        tag: "Google Sheets"
+      }
     ],
   },
   {
@@ -146,36 +144,44 @@ export const directory: DirectorySection[] = [
       { title: "Книга перукаря", description: "Стандарти роботи майстрів", url: "#", tag: "Документ" },
     ],
   },
- {
+  {
     id: "pos",
     title: "POS матеріали",
     description: "Рекламні та оформлювальні матеріали для точок.",
     icon: "pos",
     accent: "pink",
     links: [
-      // Google Диск / Матеріали
-      { title: "Перша стрижка", description: "Матеріали та макети", url: "#", tag: "Google Drive" },
-      { title: "Трафарет", description: "Макет трафарету", url: "#", tag: "Google Drive" },
-      { title: "Іконки соц мереж", description: "Набір іконок", url: "#", tag: "Google Drive" },
-      { title: "Прайс", description: "Актуальні прайси", url: "#", tag: "Google Drive" },
-      { title: "Карта лояльності", description: "Макет картки", url: "#", tag: "Google Drive" },
-      { title: "Аудіо реклама", description: "Аудіоматеріали для точок", url: "#", tag: "Google Drive" },
-      { title: "Футболки", description: "Брендований одяг", url: "#", tag: "Google Drive" },
-      { title: "Лого", description: "Логотипи у різних форматах", url: "#", tag: "Brand" },
-      { title: "Брендбук", description: "Керівництво з використання бренду", url: "#", tag: "Document" },
-      { title: "ТГ контент", description: "Матеріали для Telegram", url: "#", tag: "Telegram" },
-      
-      // Canva дизайни
-      { title: "Знижки день студента, для військових", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Плакат по місту А5", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Акція -30%", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Акція -30%", description: "Дубль шаблону Canva", url: "#", tag: "Canva" },
-      { title: "Цінники косметика", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Онлайн запис", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Візитки нові", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Іконки соцмереж", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Буду через 10 хв", description: "Шаблон Canva", url: "#", tag: "Canva" },
-      { title: "Сертифікати", description: "Шаблон Canva", url: "#", tag: "Canva" },
+      // Матеріали з Google Диску
+      { title: "Перша стрижка", description: "Матеріали та макети акції", url: "https://drive.google.com/drive/folders/1QCirT-wiCN5-50D_9Z2IlQEaRMxeAr01?usp=drive_link", tag: "Google Drive" },
+      { title: "Трафарет", description: "Брендовані трафарети", url: "https://drive.google.com/drive/folders/1I06j2knVrsK07meLTfmMXKt8Lo3MTxdy?usp=drive_link", tag: "Google Drive" },
+      { title: "Іконки соцмереж", description: "Набір іконок для соцмереж", url: "https://drive.google.com/drive/folders/1fiOvDopJAGJnn4NUMNmg2XCxtFrpt9yJ?usp=drive_link", tag: "Google Drive" },
+      { title: "Прайс", description: "Актуальні прайси мережі", url: "https://drive.google.com/drive/folders/1rnqPjLVjcPCbcx5h1OzxXV6ZTsFqUyrm?usp=drive_link", tag: "Google Drive" },
+      { title: "Аудіо реклама", description: "Рекламні аудіоролики", url: "https://drive.google.com/drive/folders/1axA2yHbvxAKVaxkX8eOtlK3wRzG3W_O6?usp=drive_link", tag: "Google Drive" },
+      { title: "Бейдж", description: "Маккети бейджів", url: "https://drive.google.com/drive/folders/1SlQM6v1WK5ZHyW_a8YsMq-Dpqb6ZfWkS?usp=drive_link", tag: "Google Drive" },
+      { title: "Візитівка", description: "Корпоративні візитки", url: "https://drive.google.com/drive/folders/1jKaTzhe2ajdLHkTrWUFQAFh9OqHo1iY-?usp=drive_link", tag: "Google Drive" },
+      { title: "Візуалізації", description: "Дизайн-проєкти інтер'єрів", url: "https://drive.google.com/drive/folders/1T2UNH4KsWQj98IOVjg2eyz2GoR7XZaXM?usp=drive_link", tag: "Google Drive" },
+      { title: "Фотопам'ять", description: "Архів фотоматеріалів", url: "https://drive.google.com/drive/folders/1DMXnjvMRVaYHf5UZ1bmBTnL_N0q-wyOR?usp=drive_link", tag: "Google Drive" },
+      { title: "Графік роботи", description: "Шаблони графіків роботи", url: "https://drive.google.com/drive/folders/1xKHK5ukOP2nl1zolqB3qrtTcdsTPBQbe?usp=drive_link", tag: "Google Drive" },
+      { title: "Карта лояльності", description: "Маккети бонусних карт", url: "https://drive.google.com/drive/folders/1DQxnjc_cOvewTThhnK9UWDAxqEmmoQ9o?usp=drive_link", tag: "Google Drive" },
+      { title: "Конструктив вивіска", description: "Технічні вимоги до вивісок", url: "https://drive.google.com/drive/folders/1vdaB7T7xksJyMONzyrv6itLpNu3vaZVI?usp=drive_link", tag: "Google Drive" },
+      { title: "Лого", description: "Офіційні логотипи", url: "https://drive.google.com/drive/folders/1y66RknbNu3_fISwiw2peuHbG4SYoVIyf?usp=drive_link", tag: "Google Drive" },
+      { title: "Знижки на під'їзд", description: "Матеріали для під'їздів", url: "https://drive.google.com/file/d/1PWGNcc_e290KGQo8FM_R9AnQseaIQfhY/view?usp=drive_link", tag: "Google Drive" },
+      { title: "Кьюар вайфай", description: "QR-коди для Wi-Fi", url: "https://drive.google.com/file/d/11PPrSbg5JlxWQvDbvAriiBl1GV5MIAH2/view?usp=drive_link", tag: "Google Drive" },
+      { title: "День захисту дітей", description: "Святкові макети", url: "https://drive.google.com/file/d/1XCugIdlP6yLHQn8APufyc5CcWjBj8GeB/view?usp=drive_link", tag: "Google Drive" },
+      { title: "Сертифікати", description: "Подарункові сертифікати", url: "https://drive.google.com/file/d/1oFA0iuImfsmRYkmBUAY9LilNn-UnaHO0/view?usp=drive_link", tag: "Google Drive" },
+      { title: "Флаєри різні (формат візитки)", description: "Збірка міні-флаєрів", url: "https://drive.google.com/file/d/1Hq0hqSTx9ktBqYY73VdYblKbJojFp2zz/view?usp=drive_link", tag: "Google Drive" },
+      { title: "Цінники Л4 Л7", description: "Фірмові цінники для вітрин", url: "https://drive.google.com/file/d/1YugQeUVe9IuX5ovbLrRHUnqSKOLFNhNL/view?usp=drive_link", tag: "Google Drive" },
+
+      // Дизайни з Canva
+      { title: "Лого (Canva)", description: "Редагований логотип у Canva", url: "https://canva.link/h8zqv0q95yfb86m", tag: "Canva" },
+      { title: "Флаєр відкриття", description: "Макет для відкриття нових точок", url: "https://canva.link/3kn06qmeieksgjg", tag: "Canva" },
+      { title: "Л8 відкриття на під'їзд", description: "Спеціальні макети для Л8", url: "https://canva.link/8v336dzhia2ygk3", tag: "Canva" },
+      { title: "Пам'ятка для лідів + керуючої", description: "Інструкції та регламенти", url: "https://canva.link/5r27lcayf33etbf", tag: "Canva" },
+      { title: "Карти (Canva)", description: "Дизайн дисконтних карт", url: "https://canva.link/72cp8mfy2wdk36b", tag: "Canva" },
+      { title: "Графік роботи (Canva)", description: "Шаблон графіку роботи", url: "https://canva.link/z8xv1nppsng5lmt", tag: "Canva" },
+      { title: "Сертифікати (Canva)", description: "Шаблони подарункових карт", url: "https://canva.link/6pm39braf3ujrc2", tag: "Canva" },
+      { title: "Плакати А4 різні", description: "Інформаційні плакати формату А4", url: "https://canva.link/yx5pj0pnkv5s0kl", tag: "Canva" },
+      { title: "Флаєри формат візитки різні (Canva)", description: "Добірка міні-флаєрів у Canva", url: "https://canva.link/30zp7t53hlklzdt", tag: "Canva" },
     ],
   },
   {
@@ -202,7 +208,7 @@ export const directory: DirectorySection[] = [
       { title: "Канва", description: "Дизайни", url: "#", tag: "Design" },
     ],
   },
- {
+  {
     id: "reports",
     title: "Звіти",
     description: "Форми та шаблони щоденної й місячної звітності.",
@@ -235,7 +241,7 @@ export const directory: DirectorySection[] = [
       { title: "Оренда та комуналка", description: "Графік розрахунків за приміщення точок", url: "#", tag: "Google Sheets" },
     ],
   },
-{
+  {
     id: "database",
     title: "Бази даних",
     description: "Клієнтські та робочі бази мережі.",
@@ -247,8 +253,7 @@ export const directory: DirectorySection[] = [
       { title: "БП відкриття", description: "Бізнес-процеси запуску нової точки", url: "#", tag: "Документ" },
     ],
   },
- 
-{
+  {
     id: "booking",
     title: "Онлайн запис і лояльність",
     description: "Система онлайн-запису та програма лояльності.",
