@@ -3,13 +3,14 @@ import { ArrowLeft, ArrowUpRight, BarChart3, TrendingUp, MapPin, FileSpreadsheet
 import { directory } from "@/lib/directory-data"
 import { cn } from "@/lib/utils"
 
-// Мапа іконок для елементів аналітики (за потреби можна замінити)
+// Мапа іконок для елементів аналітики (додано "Щотижнева аналітика")
 const analyticsIconMap: Record<string, any> = {
   "Онлайн записи": BarChart3,
   "Карта перукарень": MapPin,
   "Аналіз 2025": FolderKanban,
   "Швидкість майстра": TrendingUp,
   "Аналіз ринку": FileSpreadsheet,
+  "Щотижнева аналітика": FileSpreadsheet,
 }
 
 export default function AnalyticsPage() {
