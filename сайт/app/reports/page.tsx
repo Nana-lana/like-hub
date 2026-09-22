@@ -12,19 +12,7 @@ export default function ReportsPage() {
 
   // Нові додані посилання
   const customLinks = [
-    {
-      title: "Звіти відеоспостережень",
-      description: "Таблиця обліку та перевірок за записами камер.",
-      url: "https://docs.google.com/spreadsheets/d/1QAg15Hf31G4INaYi3_Wd_xQnwIMU0x848SvffBtViLE/edit?gid=0#gid=0",
-      tag: "Таблиця",
-    },
-    {
-      title: "Форма перевірки керуючої",
-      description: "Чек-лист оцінки роботи та дотримання регламентів.",
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSezA0d9WH9TLqbhJoJ4bhpsS_XFTjLvNXrbfgPKrWtOyDAgBA/viewform?usp=sharing&ouid=112373292964682302363",
-      tag: "Форма",
-    },
-    {
+       {
       title: "Авансовий звіт",
       description: "Облік витрат та фінансових операцій.",
       url: "https://docs.google.com/spreadsheets/d/1kUBtAiJU_u0C-PgHeruojpWxbxnbZG_kmn-Ug1KnKlE/edit?usp=drive_link",
