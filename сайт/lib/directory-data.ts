@@ -267,12 +267,6 @@ export const directory: DirectorySection[] = [
         tag: "Google Sheets" 
       },
       { 
-        title: "авансовий звіт керуючої", 
-        description: "Аванси", 
-        url: "https://docs.google.com/spreadsheets/d/1kUBtAiJU_u0C-PgHeruojpWxbxnbZG_kmn-Ug1KnKlE/edit?usp=drive_link", 
-        tag: "Google Sheets" 
-      },
-      { 
         title: "дашборд лайк", 
         description: "Зведений дашборд мережі", 
         url: "https://docs.google.com/spreadsheets/d/1OUzlJ-mZ4M31B25Vv_M3PeDXJVS1etqqd4nuQtNi7tA/edit?usp=drive_link", 
