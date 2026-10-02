@@ -36,10 +36,8 @@ export type DirectorySection = {
     | "pos"
     | "links"
     | "reports"
-    | "payments"
     | "database"
     | "process"
-    | "booking"
     | "repair"
   /** Колірний акцент розділу */
   accent: "green" | "purple" | "teal" | "amber" | "pink" | "blue" | "lime" | "violet"
@@ -281,17 +279,6 @@ export const directory: DirectorySection[] = [
     ],
   },
   {
-    id: "payments",
-    title: "Платіжний календар",
-    description: "Графік платежів, оренди та регулярних витрат.",
-    icon: "payments",
-    accent: "violet",
-    links: [
-      { title: "Платіжний календар", description: "Усі планові платежі за датами місяця", url: "#", tag: "Google Sheets" },
-      { title: "Оренда та комуналка", description: "Графік розрахунків за приміщення точок", url: "#", tag: "Google Sheets" },
-    ],
-  },
-  {
     id: "database",
     title: "Бази даних",
     description: "Клієнтські та робочі бази мережі.",
@@ -302,19 +289,4 @@ export const directory: DirectorySection[] = [
       { title: "Постачальники", description: "Контакти, прайси та умови співпраці", url: "#", tag: "Google Sheets" },
       { title: "БП відкриття", description: "Бізнес-процеси запуску нової точки", url: "#", tag: "Документ" },
     ],
-  },
-  {
-    id: "booking",
-    title: "Онлайн запис і лояльність",
-    description: "Система онлайн-запису та програма лояльності.",
-    icon: "booking",
-    accent: "purple",
-    links: [
-      { title: "Вланч для клієнтів", description: "Клієнтський інтерфейс запису", url: "#", tag: "Wlaunch" },
-      { title: "Вланч для адмінів", description: "Адмін-панель керування", url: "#", tag: "Wlaunch" },
-      { title: "База клієнтів Вланч", description: "CRM-база відвідувачів", url: "#", tag: "Wlaunch" },
-      { title: "Гугл скрипт для таблиці клієнтів", description: "Автоматизація та скрипти", url: "#", tag: "Google Script" },
-      { title: "Прайс для Вланч завантаження", description: "Файл імпорту прайсу в систему", url: "#", tag: "Upload" },
-    ],
-  },
-]
+  }
