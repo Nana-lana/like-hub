@@ -314,6 +314,7 @@ export const directory: DirectorySection[] = [
         description: "Розрахунок витрат та бюджету на запуск", 
         url: "https://docs.google.com/spreadsheets/d/1CIEn-YFxBcfkeZyqz03r7RTmscvtQU-hMCrm2S0vFUI/edit?usp=drive_link", 
         tag: "Google Sheets" 
-      },
+     },
     ],
+  },
 ];
