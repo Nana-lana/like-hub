@@ -278,16 +278,42 @@ export const directory: DirectorySection[] = [
       },
     ],
   },
-  {
+{
     id: "database",
     title: "Бази даних",
-    description: "Клієнтські та робочі бази мережі.",
+    description: "Клієнтські та робочі бази мережі, постачальники й регламенти відкриття.",
     icon: "database",
     accent: "green",
     links: [
-      { title: "База клієнтів", description: "Загальна клієнтська база мережі", url: "#", tag: "База" },
-      { title: "Постачальники", description: "Контакти, прайси та умови співпраці", url: "#", tag: "Google Sheets" },
-      { title: "БП відкриття", description: "Бізнес-процеси запуску нової точки", url: "#", tag: "Документ" },
+      { 
+        title: "База клієнтів", 
+        description: "Загальна клієнтська база мережі", 
+        url: "#", 
+        tag: "База" 
+      },
+      { 
+        title: "Постачальники", 
+        description: "Контакти, прайси та умови співпраці", 
+        url: "https://docs.google.com/spreadsheets/d/1yEYXSm1L1sifB9IfrTh36Pvyg56ZLCF-50Iox_qnGk0/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
+      { 
+        title: "БП відкриття", 
+        description: "Бізнес-процеси запуску нової точки", 
+        url: "https://app.notion.com/p/3448c29501998076bc17feff218a198b", 
+        tag: "Notion" 
+      },
+      { 
+        title: "Карта відкриття", 
+        description: "Візуальна карта процесів запуску", 
+        url: "https://miro.com/app/board/uXjVHfRmR3E=/?share_link_id=229452479691", 
+        tag: "Miro" 
+      },
+      { 
+        title: "Калькуляція відкриттів", 
+        description: "Розрахунок витрат та бюджету на запуск", 
+        url: "https://docs.google.com/spreadsheets/d/1CIEn-YFxBcfkeZyqz03r7RTmscvtQU-hMCrm2S0vFUI/edit?usp=drive_link", 
+        tag: "Google Sheets" 
+      },
     ],
-  },
 ];
