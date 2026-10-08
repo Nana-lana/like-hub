@@ -37,7 +37,7 @@ export default function DatabasePage() {
         </div>
 
         {/* Сітка елементів бази даних */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {links.map((link, idx) => {
             const isReal = link.url.startsWith("http")
 
@@ -79,6 +79,68 @@ export default function DatabasePage() {
             )
           })}
         </div>
+
+        {/* Блок кольорів та матеріалів для ремонту в самому низу */}
+        <div className="rounded-3xl border border-border bg-card/90 p-8 shadow-sm backdrop-blur-sm">
+          <h2 className="font-display text-xl font-bold text-foreground mb-6">
+            🎨 Кольори та матеріали для ремонту
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            {/* 1. Основний фіолетовий */}
+            <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-background/50">
+              <div className="size-12 rounded-full shrink-0 shadow-inner border border-black/10" style={{ backgroundColor: "#90869d" }} />
+              <div>
+                <span className="font-semibold text-sm text-foreground block">Основний фіолетовий</span>
+                <span className="text-xs font-mono text-muted-foreground">#90869d</span>
+                <p className="text-xs text-muted-foreground mt-0.5">dufa megalatex, 2020R60B на 4л In 51 відро 7 кг</p>
+              </div>
+            </div>
+
+            {/* 2. Зелений для кружечків */}
+            <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-background/50">
+              <div className="size-12 rounded-full shrink-0 shadow-inner border border-black/10" style={{ backgroundColor: "#b1c1a3" }} />
+              <div>
+                <span className="font-semibold text-sm text-foreground block">Зелений для кружечків</span>
+                <span className="text-xs font-mono text-muted-foreground">#b1c1a3</span>
+                <p className="text-xs text-muted-foreground mt-0.5">dufa megalatex, 1015-G</p>
+              </div>
+            </div>
+
+            {/* 3. Сіра фігура прямокутник */}
+            <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-background/50">
+              <div className="size-12 rounded-full shrink-0 shadow-inner border border-black/10" style={{ backgroundColor: "#848479" }} />
+              <div>
+                <span className="font-semibold text-sm text-foreground block">Сіра фігура прямокутник</span>
+                <span className="text-xs font-mono text-muted-foreground">#848479</span>
+                <p className="text-xs text-muted-foreground mt-0.5">Основний сірий елемент</p>
+              </div>
+            </div>
+
+            {/* 4. Велике коло фігура */}
+            <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-background/50">
+              <div className="size-12 rounded-full shrink-0 shadow-inner border border-black/10" style={{ backgroundColor: "#407680" }} />
+              <div>
+                <span className="font-semibold text-sm text-foreground block">Велике коло фігура</span>
+                <span className="text-xs font-mono text-muted-foreground">#407680</span>
+                <p className="text-xs text-muted-foreground mt-0.5">Акцентний елемент</p>
+              </div>
+            </div>
+
+            {/* 5. Мале коло фігура */}
+            <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-background/50">
+              <div className="size-12 rounded-full shrink-0 shadow-inner border border-black/10" style={{ backgroundColor: "#2b726d" }} />
+              <div>
+                <span className="font-semibold text-sm text-foreground block">Мале коло фігура</span>
+                <span className="text-xs font-mono text-muted-foreground">#2b726d</span>
+                <p className="text-xs text-muted-foreground mt-0.5">Детальний акцент</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </main>
   )
