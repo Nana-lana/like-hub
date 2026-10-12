@@ -186,21 +186,94 @@ export const directory: DirectorySection[] = [
     icon: "links",
     accent: "teal",
     links: [
-      { title: "Трелло", description: "Управління завданнями", url: "#", tag: "Сервіс" },
-      { title: "Ноушин", description: "База знань", url: "#", tag: "Сервіс" },
-      { title: "Вланч", description: "Основна система", url: "#", tag: "CRM" },
-      { title: "Вланч для клієнтів", description: "Клієнтський інтерфейс", url: "#", tag: "CRM" },
-      { title: "Вланч для адмінів", description: "Адмін-панель", url: "#", tag: "CRM" },
-      { title: "Гугл Диск", description: "Сховище файлів", url: "#", tag: "Google Drive" },
-      { title: "Інстаграм", description: "Соцмережа", url: "#", tag: "Social" },
-      { title: "Міро", description: "Дошки та схемки", url: "#", tag: "Tools" },
-      { title: "Фейсбук", description: "Соцмережа", url: "#", tag: "Social" },
-      { title: "Тредс", description: "Соцмережа", url: "#", tag: "Social" },
-      { title: "Сайт", description: "Головний сайт мережі", url: "#", tag: "Web" },
-      { title: "Онлайн запис", description: "Сторінка бронювання", url: "#", tag: "Booking" },
-      { title: "Тік Ток", description: "Відеоконтент", url: "#", tag: "Social" },
-      { title: "Гугл Скрипт", description: "Автоматизація", url: "#", tag: "Tools" },
-      { title: "Канва", description: "Дизайни", url: "#", tag: "Design" },
+      { title: "Трелло", 
+        description: "Лайк-задачі", 
+        url: "https://trello.com/invite/b/69fc982cd96c3d5fa61fb525/ATTIb7ec85ecb78b7bcbcbcd895044c1b42c93CD839B/лайк-задачі", 
+        tag: "Сервіс" 
+      },
+      { 
+        title: "Ноушин", 
+        description: "База знань та сторінка проекту", 
+        url: "https://app.notion.com/p/Home-page-97b705bb22ed4a75851492edc2b9b7a1?__dm_a=1", 
+        tag: "Сервіс" 
+      },
+      { 
+        title: "Вланч для клієнтів", 
+        description: "Клієнтський інтерфейс", 
+        url: "https://w.wlaunch.net/i/like.poltava/b", 
+        tag: "CRM" 
+      },
+      { 
+        title: "Вланч адмінів", 
+        description: "Адмін-панель", 
+        url: "https://wlaunch.net/uk-ua/?utm_source=google&utm_medium=cpc&utm_campaign=g_search_kwd_brand_ua&utm_content=797700846470&utm_term=%D0%B2%D0%BB%D0%B0%D0%BD%D1%87&gad_source=1&gad_campaignid=23579400877&gbraid=0AAAAAC1TOPD0ug7poHMDCR9ppvv_hyIeN&gclid=CjwKCAjwirLWBhBBEiwAlItbEg7JKaeGBqVRAXXbJ96dNrYKEvQxmmpmEZLn82_47NC8zumdTKpQhRoC1kQQAvD_BwE", 
+        tag: "CRM" 
+      },
+      { 
+        title: "Інстаграм", 
+        description: "Сторінка мережі", 
+        url: "https://www.instagram.com/like.poltava?stkn=MXUxOXV3YjhubHkwaA==", 
+        tag: "Social" 
+      },
+      { 
+        title: "ТікТок", 
+        description: "Відеоконтент", 
+        url: "https://tiktok.com/@like.poltava?_r=1&_t=ZS-99Yd7A8tQrF", 
+        tag: "Social" 
+      },
+      { 
+        title: "Фейсбук (профіль)", 
+        description: "Особиста сторінка / профіль", 
+        url: "https://uk-ua.facebook.com/profile.php?id=100082208621231&name=xhp_ntfbaction__open_user", 
+        tag: "Social" 
+      },
+      { 
+        title: "Фейсбук (спільнота)", 
+        description: "Сторінка мережі", 
+        url: "https://www.facebook.com/share/1GW1oyqPP4/?mibextid=wwXIfr", 
+        tag: "Social" 
+      },
+      { 
+        title: "Тредс", 
+        description: "Мікроблоги", 
+        url: "https://threads.com/@like.poltava", 
+        tag: "Social" 
+      },
+      { 
+        title: "Телеграм", 
+        description: "Канал зв'язку", 
+        url: "https://t.me/likepoltava", 
+        tag: "Social" 
+      },
+      { 
+        title: "Міро", 
+        description: "Дошки та схемки", 
+        url: "https://miro.com", 
+        tag: "Tools" 
+      },
+      { 
+        title: "Сайт", 
+        description: "Головний сайт мережі", 
+        url: "https://like.in.ua/", 
+        tag: "Web" 
+      },
+      { 
+        title: "Гугл Скрипт", 
+        description: "Автоматизація та проєкти", 
+        url: "https://script.google.com/u/0/home/projects/125zhaTCAnXYq8wxUIj_LJDWOgmI75pxMRhharY91ss6Su3WGxgq61BOJ/edit", 
+        tag: "Tools" 
+      },
+      { 
+        title: "Гітхаб", 
+        description: "Репозиторій like-pl", 
+        url: "https://github.com/like10689/like-pl", 
+        tag: "Dev" 
+      },
+      { 
+        title: "Версель", 
+        description: "Панель розгортання", 
+        url: "https://vercel.com/like-lik-e/like-pl", 
+        tag: "Dev" },
     ],
   },
   {
