@@ -286,10 +286,10 @@ export const directory: DirectorySection[] = [
     accent: "green",
     links: [
       { 
-        title: "База клієнтів", 
+       title: "База клієнтів", 
         description: "Загальна клієнтська база мережі", 
-        url: "#", 
-        tag: "База" 
+        url: "https://drive.google.com/drive/folders/11tuYgIn67WCoib_RHAFYVtSU5F5H_2xP?usp=drive_link", 
+        tag: "Google Drive"
       },
       { 
         title: "Постачальники", 
