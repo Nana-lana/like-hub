@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, ArrowUpRight, Network, Users, UserCheck, Shield, Sparkles, FileText, Activity } from "lucide-react"
+import { ArrowLeft, ArrowUpRight, Network, Users, UserCheck, Shield, Sparkles, FileText, Activity, BookOpen } from "lucide-react"
 import { directory } from "@/lib/directory-data"
 
 const structureIconMap: Record<string, any> = {
@@ -8,14 +8,15 @@ const structureIconMap: Record<string, any> = {
   "Посадова інструкція CEO": FileText,
   "Посадова інструкція менеджера з розвитку": FileText,
   "Посадова інструкція адміністратора": FileText,
+  "Книга перукаря": BookOpen,
 }
 
 export default function StructurePage() {
   const structureSection = directory.find((s) => s.id === "structure")
   
-  // Прибираємо зайві картки зі списку на цій сторінці
+  // Залишаємо фільтрацію тільки для Оргструктури мережі, а Книгу перукаря показуємо
   const links = structureSection 
-    ? structureSection.links.filter((link) => link.title !== "Книга перукаря" && link.title !== "Оргструктура мережі") 
+    ? structureSection.links.filter((link) => link.title !== "Оргструктура мережі") 
     : []
 
   return (
@@ -78,7 +79,7 @@ export default function StructurePage() {
               </div>
             </div>
 
-            {/* Рядок 2: Керівна мережі, менеджер з розвитку, адмін */}
+            {/* Рядок 2: Керуюча мережі, менеджер з розвитку, адмін */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex items-center gap-3 rounded-2xl border border-border bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[oklch(0.93_0.05_255)] text-[oklch(0.5_0.13_255)]">
