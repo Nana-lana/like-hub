@@ -120,9 +120,10 @@ const birthdaysByMonth = [
     },
   {
     month: "Грудень",
-    items: [{ date: "19.12", name: "Сахно Наташа" }
-           { date: "4.12", name: "Шошура Ніна" }],
-  },
+    items: [
+  { date: "19.12", name: "Сахно Наташа" },
+  { date: "4.12", name: "Шошура Ніна" },
+],
 ]
 
 export default function DocumentsPage() {
