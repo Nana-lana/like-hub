@@ -2,15 +2,15 @@
  * ┌─────────────────────────────────────────────────────────────────────┐
  * │  ЯК РЕДАГУВАТИ ЦЕЙ ФАЙЛ                                             │
  * │                                                                     │
- * │  Це єдине місце, де зберігаються всі розділи та посилання довідника.  │
- * │  Щоб додати посилання — знайдіть потрібний розділ (section) і        │
+ * │  Це єдине місце, де зберігаються всі розділи та посилання довідника. │
+ * │  Щоб додати посилання — знайдіть потрібний розділ (section) і         │
  * │  замініть url: "#" на своє посилання (або додайте новий обʼєкт):     │
  * │                                                                     │
  * │    {                                                                │
  * │      title: "Назва посилання",                                      │
- * │      description: "Короткий опис (необовʼязково)",                   │
+ * │      description: "Короткий опис (необовʼязково)",                    │
  * │      url: "https://...",  // вставте своє посилання                  │
- * │      tag: "Google Drive",  // необовʼязкова мітка                   │
+ * │      tag: "Google Drive",  // необовʼязкова мітка                    │
  * │    }                                                                │
  * │                                                                     │
  * │  Щоб прибрати посилання — просто видаліть відповідний обʼєкт.         │
@@ -152,7 +152,7 @@ export const directory: DirectorySection[] = [
         description: "Стандарти роботи майстрів", 
         url: "https://drive.google.com/file/d/1cHr7pbeL0mYpzLqzqW9lDpJxte-Ju_ev/view?usp=drive_link", 
         tag: "Google Drive" },
-    ],
+  ],
   },
   {
     id: "pos",
@@ -285,7 +285,8 @@ export const directory: DirectorySection[] = [
         title: "Версель", 
         description: "Панель розгортання", 
         url: "https://vercel.com/like-lik-e/like-pl", 
-        tag: "Dev" },
+        tag: "Dev" 
+      },
     ],
   },
   {
@@ -363,7 +364,7 @@ export const directory: DirectorySection[] = [
       },
     ],
   },
-{
+  {
     id: "database",
     title: "Бази даних",
     description: "Клієнтські та робочі бази мережі, постачальники й регламенти відкриття.",
@@ -371,15 +372,15 @@ export const directory: DirectorySection[] = [
     accent: "green",
     links: [
       { 
-       title: "База клієнтів", 
-        description: "Загальна клієнтська база мережі", 
-        url: "https://drive.google.com/drive/folders/11tuYgIn67WCoib_RHAFYVtSU5F5H_2xP?usp=drive_link", 
-        tag: "Google Drive"
-      },
-      { 
         title: "Брендбук", 
         description: "Офіційний брендбук мережі ЛАЙК", 
         url: "https://drive.google.com/file/d/1CSM6fEBdW3q0hNhMd3vzmsXhYih5mfAe/view?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
+        title: "База клієнтів", 
+        description: "Загальна клієнтська база мережі", 
+        url: "https://drive.google.com/drive/folders/11tuYgIn67WCoib_RHAFYVtSU5F5H_2xP?usp=drive_link", 
         tag: "Google Drive" 
       },
       { 
@@ -405,7 +406,7 @@ export const directory: DirectorySection[] = [
         description: "Розрахунок витрат та бюджету на запуск", 
         url: "https://docs.google.com/spreadsheets/d/1CIEn-YFxBcfkeZyqz03r7RTmscvtQU-hMCrm2S0vFUI/edit?usp=drive_link", 
         tag: "Google Sheets" 
-     },
+      },
     ],
   },
 ];
