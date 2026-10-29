@@ -377,6 +377,12 @@ export const directory: DirectorySection[] = [
         tag: "Google Drive"
       },
       { 
+        title: "Брендбук", 
+        description: "Офіційний брендбук мережі ЛАЙК", 
+        url: "https://drive.google.com/file/d/1CSM6fEBdW3q0hNhMd3vzmsXhYih5mfAe/view?usp=drive_link", 
+        tag: "Google Drive" 
+      },
+      { 
         title: "Постачальники", 
         description: "Контакти, прайси та умови співпраці", 
         url: "https://docs.google.com/spreadsheets/d/1yEYXSm1L1sifB9IfrTh36Pvyg56ZLCF-50Iox_qnGk0/edit?usp=drive_link", 
