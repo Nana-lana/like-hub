@@ -34,7 +34,7 @@ const generalDocuments = [
   },
 ]
 
-// Блок: Робота з майстрами (без Гугл форм та Перевірки лайк)
+// Блок: Робота з майстрами
 const mastersDocuments = [
   {
     title: "Документи майстрів",
@@ -117,13 +117,14 @@ const birthdaysByMonth = [
   {
     month: "Листопад",
     items: [{ date: "14.11", name: "Ольга Лісюченко" }],
-    },
+  },
   {
     month: "Грудень",
     items: [
-  { date: "19.12", name: "Сахно Наташа" },
-  { date: "4.12", name: "Шошура Ніна" },
-],
+      { date: "19.12", name: "Сахно Наташа" },
+      { date: "04.12", name: "Шошура Ніна" },
+    ],
+  },
 ]
 
 export default function DocumentsPage() {
@@ -170,11 +171,11 @@ export default function DocumentsPage() {
                       </div>
                       <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                     </div>
-                    
+
                     <h3 className="font-display font-semibold text-lg text-foreground group-hover:text-[oklch(0.5_0.11_158)] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    
+
                     {item.description ? (
                       <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                         {item.description}
@@ -220,11 +221,11 @@ export default function DocumentsPage() {
                       </div>
                       <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                     </div>
-                    
+
                     <h3 className="font-display font-semibold text-lg text-foreground group-hover:text-[oklch(0.5_0.11_158)] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    
+
                     {item.description ? (
                       <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                         {item.description}
